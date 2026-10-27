@@ -3,331 +3,381 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Николай — разработчик с AI-усилением | Портфолио</title>
-<meta name="description" content="Автоматизация бизнес-процессов: CRM, боты, дашборды, внутренние сервисы. Полный цикл — от архитектуры до деплоя.">
+<title>Николай — разработчик с AI-усилением | Автоматизация бизнес-процессов</title>
+<meta name="description" content="CRM, Telegram-боты, дашборды, внутренние сервисы. Полный цикл: архитектура → код → тесты → деплой. Каждый проект запускается за 2 минуты.">
 <style>
 :root{
-  --bg:#07080f; --bg2:#0c0e1a; --card:rgba(255,255,255,.04); --line:rgba(255,255,255,.09);
-  --txt:#e9ecf5; --muted:#8b93ab; --acc:#6c8cff; --acc2:#a06cff; --acc3:#3ddad7;
-  --grad:linear-gradient(90deg,#6c8cff,#a06cff 45%,#3ddad7);
+ --bg:#05060d;--card:rgba(255,255,255,.035);--line:rgba(255,255,255,.08);
+ --txt:#eaedf6;--muted:#8b93ad;--a:#6c8cff;--b:#a06cff;--c:#3ddad7;
+ --grad:linear-gradient(90deg,#6c8cff,#a06cff 50%,#3ddad7);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--txt);font-family:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;overflow-x:hidden;line-height:1.6}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.6;overflow-x:hidden}
 ::selection{background:#6c8cff55}
-h1,h2,h3{font-weight:800;letter-spacing:-.02em}
-a{color:inherit;text-decoration:none}
+a{color:inherit;text-decoration:none}h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.15}
 
-/* ===== hero ===== */
+/* progress + cursor */
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:99;box-shadow:0 0 12px #6c8cff}
+#glow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:1;
+ background:radial-gradient(circle,#6c8cff14,transparent 65%);transform:translate(-50%,-50%);transition:opacity .4s}
+
+/* bg */
 #heroBg{position:fixed;inset:0;z-index:-2;background:
- radial-gradient(600px 400px at 15% 20%,#6c8cff22,transparent),
- radial-gradient(700px 500px at 85% 30%,#a06cff22,transparent),
- radial-gradient(600px 500px at 50% 90%,#3ddad71a,transparent),var(--bg)}
-.blob{position:fixed;border-radius:50%;filter:blur(90px);opacity:.16;z-index:-1;pointer-events:none}
-.b1{width:420px;height:420px;background:#6c8cff;top:-120px;left:-80px;animation:drift 22s ease-in-out infinite alternate}
-.b2{width:520px;height:520px;background:#a06cff;top:8%;right:-160px;animation:drift 28s ease-in-out infinite alternate-reverse}
-.b3{width:380px;height:380px;background:#3ddad7;bottom:-140px;left:35%;animation:drift 25s ease-in-out infinite alternate}
-@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(70px,60px) scale(1.15)}}
-.grid-overlay{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
- background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
- background-size:56px 56px;mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 40%,transparent)}
+ radial-gradient(700px 460px at 12% 12%,#6c8cff20,transparent),
+ radial-gradient(720px 520px at 88% 26%,#a06cff1e,transparent),
+ radial-gradient(640px 520px at 50% 96%,#3ddad717,transparent),var(--bg)}
+.blob{position:fixed;border-radius:50%;filter:blur(110px);opacity:.17;z-index:-1;pointer-events:none}
+.b1{width:460px;height:460px;background:#6c8cff;top:-140px;left:-100px;animation:drift 24s ease-in-out infinite alternate}
+.b2{width:560px;height:560px;background:#a06cff;top:6%;right:-180px;animation:drift 30s ease-in-out infinite alternate-reverse}
+.b3{width:400px;height:400px;background:#3ddad7;bottom:-160px;left:32%;animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(80px,70px) scale(1.18)}}
+.gridov{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.65;
+ background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+ background-size:54px 54px;mask-image:radial-gradient(ellipse 95% 70% at 50% 0%,#000 30%,transparent)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
 
-.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
-nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,8,15,.65);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-.logo{font-weight:800;font-size:17px}.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-nav a.lnk{color:var(--muted);font-size:14px;margin-left:26px;transition:.2s}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(16px);background:rgba(5,6,13,.6);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:800;font-size:17px}.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:22px}
+nav a.lnk{color:var(--muted);font-size:14px;margin-left:24px;transition:.2s}
 nav a.lnk:hover{color:#fff}
-.nav-cta{background:var(--grad);color:#fff !important;padding:7px 16px;border-radius:99px;font-size:13px;font-weight:600}
+.nc{background:var(--grad);color:#fff !important;padding:8px 18px;border-radius:99px;font-size:13px;font-weight:600;margin-left:24px;box-shadow:0 4px 18px #6c8cff44;transition:.25s}
+.nc:hover{transform:translateY(-2px);box-shadow:0 8px 26px #6c8cff66}
 
-header{pt:0;padding:150px 0 90px;position:relative}
-.badge{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:#b9c2dd;background:var(--card);border:1px solid var(--line);padding:7px 14px;border-radius:99px}
-.dot{width:7px;height:7px;border-radius:50%;background:#3ddad7;box-shadow:0 0 10px #3ddad7;animation:pulse 2s infinite}
-@keyframes pulse{50%{opacity:.4}}
-h1.title{font-size:clamp(34px,5.4vw,62px);line-height:1.12;margin:26px 0 20px;max-width:880px}
-.grad-txt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-header p.lead{font-size:18px;color:var(--muted);max-width:640px;margin-bottom:34px}
-.btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn{padding:13px 26px;border-radius:12px;font-weight:600;font-size:15px;transition:.25s;display:inline-flex;align-items:center;gap:8px}
-.btn.hero{background:var(--grad);color:#fff;box-shadow:0 8px 30px #6c8cff44}
-.btn.hero:hover{transform:translateY(-2px);box-shadow:0 12px 40px #6c8cff66}
-.btn.ghost{border:1px solid var(--line);color:var(--txt);background:var(--card)}
-.btn.ghost:hover{border-color:#6c8cff;color:#cfdbff}
+/* hero */
+#hero{pt:0;padding:170px 0 70px}
+.hero-flex{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.bdg{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;color:#b9c2dd;background:var(--card);border:1px solid var(--line);padding:7px 15px;border-radius:99px}
+.dot{width:8px;height:8px;border-radius:50%;background:#3ddad7;box-shadow:0 0 12px #3ddad7;animation:pl 2s infinite}
+@keyframes pl{50%{opacity:.35}}
+h1.tt{font-size:clamp(32px,4.6vw,56px);margin:24px 0 18px}
+.gt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:gsh 6s linear infinite}
+@keyframes gsh{to{background-position:200% 0}}
+.sub{font-size:17px;color:var(--muted);max-width:560px}
+.hstats{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 32px}
+.hstat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 18px;font-size:13.5px;display:flex;gap:9px;align-items:center;transition:.25s}
+.hstat:hover{border-color:#6c8cff88;transform:translateY(-3px)}
+.hstat b{color:#cfe0ff}
+.btn{padding:14px 28px;border-radius:13px;font-weight:600;font-size:15px;transition:.25s;display:inline-flex;align-items:center;gap:9px}
+.btn.h{background:var(--grad);color:#fff;box-shadow:0 10px 34px #6c8cff55}
+.btn.h:hover{transform:translateY(-3px);box-shadow:0 16px 44px #6c8cff77}
+.btn.g{border:1px solid var(--line);background:var(--card)}
+.btn.g:hover{border-color:#6c8cff;color:#cfdbff}
 
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:70px}
-.stat{background:var(--bg2);padding:26px 22px}
-.stat b{font-size:clamp(24px,3vw,34px);display:block;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* browser window with live slideshow */
+.brw{background:#0a0c16;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 90px rgba(60,80,255,.18),0 6px 24px rgba(0,0,0,.5);transform:perspective(1200px) rotateY(-4deg) rotateX(2deg);transition:.5s}
+.brw:hover{transform:perspective(1200px) rotateY(0) rotateX(0)}
+.brw-bar{height:34px;background:rgba(255,255,255,.045);display:flex;align-items:center;padding:0 14px;gap:7px;border-bottom:1px solid var(--line)}
+.c3{width:10px;height:10px;border-radius:50%}.r{background:#ff5f57}.y{background:#febc2e}.g{background:#28c840}
+.brw-url{margin-left:auto;font-size:11px;color:#67708c;background:rgba(255,255,255,.05);padding:3px 12px;border-radius:99px}
+.brw-view{position:relative;height:330px;overflow:hidden}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;transform:scale(1.08);animation:kb 9s ease-in-out infinite}
+.slide.on{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;object-fit:cover;top:0;left:0}
+@keyframes kb{0%{transform:scale(1.08)}50%{transform:scale(1.16)}100%{transform:scale(1.08)}}
+.brw-cap{position:absolute;bottom:0;left:0;right:0;padding:26px 16px 12px;font-size:12px;color:#cfd8ef;background:linear-gradient(transparent,rgba(5,6,13,.92))}
+.dots{position:absolute;right:12px;bottom:12px;display:flex;gap:6px}
+.dts{width:6px;height:6px;border-radius:50%;background:#556;cursor:pointer;transition:.3s}
+.dts.on{background:var(--c);box-shadow:0 0 8px #3ddad7}
+
+/* stats band */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:84px}
+.stat{background:#080a14;padding:28px 24px}
+.stat b{font-size:clamp(26px,3vw,38px);display:block;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .stat span{font-size:13px;color:var(--muted)}
 
-/* sections */
-section{padding:90px 0}
-.sec-head h2{font-size:clamp(26px,3.4vw,40px);margin-bottom:14px}
-.sec-head p{color:var(--muted);max-width:640px}
-.sec-head{margin-bottom:48px}
+section{padding:96px 0}
+.sh h2{font-size:clamp(26px,3.4vw,40px);margin-bottom:13px}
+.sh p{color:var(--muted);max-width:640px}
+.sh{margin-bottom:52px}
 
 /* pains */
-.pains{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.pain{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;transition:.3s}
-.pain:hover{border-color:#6c8cff66;transform:translateY(-4px)}
-.pain .p{color:#ff7d90;font-size:14px;font-weight:600;margin-bottom:6px;display:flex;gap:8px;align-items:center}
-.pain .r{color:#3ddad7;font-size:14px;font-weight:600;display:flex;gap:8px;align-items:center;margin-top:10px}
-.pain h3{font-size:17px;margin-bottom:8px}
-.pain p{color:var(--muted);font-size:14.5px}
+.pains{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px}
+.pain{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;transition:.3s;position:relative;overflow:hidden}
+.pain::after{content:"";position:absolute;inset:0;background:radial-gradient(300px 180px at var(--mx,50%) var(--my,50%),#6c8cff14,transparent);opacity:0;transition:.3s}
+.pain:hover::after{opacity:1}
+.pain:hover{border-color:#6c8cff66;transform:translateY(-5px)}
+.pb{color:#ff7d90;font-size:13.5px;font-weight:600;margin-bottom:6px}
+.pr{color:#3ddad7;font-size:13.5px;font-weight:600;margin-top:10px}
+.pain h3{font-size:16.5px;margin-bottom:7px}
+.pain p{color:var(--muted);font-size:14px}
+.pain a{color:#9bb5ff;font-weight:600}
 
-/* projects */
-.proj{background:var(--bg2);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-bottom:26px;transition:.35s;transform-style:preserve-3d}
-.proj:hover{border-color:#6c8cff55;box-shadow:0 20px 60px rgba(108,140,255,.12)}
-.proj-in{display:grid;grid-template-columns:1.05fr .95fr;gap:0;align-items:stretch}
-.proj-txt{padding:38px 40px;display:flex;flex-direction:column;justify-content:center}
-.tagrow{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
-.tag{font-size:12px;color:#a8b3d4;border:1px solid var(--line);padding:4px 11px;border-radius:99px;background:rgba(255,255,255,.03)}
-.proj h3{font-size:24px;margin-bottom:12px}
-.proj h3 a:hover{color:#9bb5ff}
-.proj ul{list-style:none;color:var(--muted);font-size:14.5px;margin-bottom:22px}
-.proj ul li{padding-left:20px;position:relative;margin-bottom:7px}
-.proj ul li::before{content:"▸";position:absolute;left:0;color:var(--acc)}
-.proj-img{position:relative;min-height:300px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#05060b}
-.proj-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.proj:hover .proj-img img{transform:scale(1.05)}
-.proj-img .gif{height:260px;object-fit:contain}
-.res{font-size:13.5px;color:#9fe8dd;background:rgba(61,218,215,.07);border:1px solid rgba(61,218,215,.2);padding:9px 14px;border-radius:10px;display:inline-block;margin-top:auto}
+/* showcase projects */
+.show{background:#080a14;border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-bottom:30px;transition:.35s}
+.show:hover{border-color:#6c8cff55;box-shadow:0 24px 70px rgba(108,140,255,.13)}
+.show-in{display:grid;grid-template-columns:1.08fr .92fr}
+.show-txt{padding:40px 42px;display:flex;flex-direction:column;justify-content:center}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 18px}
+.tag{font-size:11.5px;color:#a8b3d4;border:1px solid var(--line);padding:4px 11px;border-radius:99px;background:rgba(255,255,255,.03)}
+.show h3{font-size:24px}
+.show h3 a:hover{color:#9bb5ff}
+.show ul{list-style:none;color:var(--muted);font-size:14.5px;margin-bottom:22px}
+.show ul li{padding-left:20px;position:relative;margin-bottom:7px}
+.show ul li::before{content:"▸";position:absolute;left:0;color:var(--a)}
+.show-view{position:relative;min-height:340px;overflow:hidden;background:#05060b;display:flex;align-items:center;justify-content:center}
+.show-view .fr{position:absolute;inset:0;opacity:0;transition:opacity .8s}
+.show-view .fr.on{opacity:1}
+.show-view img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}
+.show:hover img{transform:scale(1.09)}
+.mini{position:absolute;bottom:14px;left:14px;display:flex;gap:8px}
+.mini img{width:64px;height:44px;object-fit:cover;border-radius:8px;border:2px solid transparent;cursor:pointer;transition:.25s;filter:saturate(.7)}
+.mini img.on{border-color:var(--c);filter:saturate(1);box-shadow:0 0 14px #3ddad766}
+.tags2{position:absolute;top:14px;left:14px;background:rgba(5,6,13,.75);border:1px solid var(--line);padding:5px 12px;border-radius:99px;font-size:11.5px;color:#9fe8dd;display:flex;gap:6px;align-items:center}
+.live{width:7px;height:7px;border-radius:50%;background:#3ddad7;box-shadow:0 0 9px #3ddad7;animation:pl 2s infinite}
+.res{font-size:13.5px;color:#9fe8dd;background:rgba(61,218,215,.07);border:1px solid rgba(61,218,215,.2);padding:10px 15px;border-radius:11px;display:inline-block;margin-top:auto}
 
-/* gif hero band */
-.band{border-radius:20px;overflow:hidden;border:1px solid var(--line);position:relative}
-.band img{width:100%;display:block}
+/* ai */
+.ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ai{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;transition:.3s}
+.ai:hover{border-color:#6c8cff66;transform:translateY(-4px)}
+.ai .n{font-size:26px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+.ai h4{font-size:16px;margin:10px 0 8px}
+.ai p{color:var(--muted);font-size:14px}
 
-/* stack marquee */
-.marq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.marq-in{display:flex;gap:56px;width:max-content;animation:scroll 32s linear infinite}
-.marq-in span{font-size:19px;font-weight:700;color:#5f6883;white-space:nowrap;letter-spacing:.02em}
-@keyframes scroll{to{transform:translateX(-50%)}}
+/* extra */
+.extra{display:flex;gap:14px;flex-wrap:wrap}
+.xp{display:inline-flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);padding:14px 20px;border-radius:13px;font-size:14px;transition:.25s;color:var(--muted)}
+.xp b{color:var(--txt)}
+.xp:hover{border-color:#6c8cff66;color:#cfdbff}
 
-/* about */
-.two{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start}
-.two p{color:var(--muted);font-size:15.5px;margin-bottom:16px}
-.ai-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
-.ai-card h4{font-size:15px;margin-bottom:14px;color:#cfdbff}
-.ai-card p{font-size:14px;margin-bottom:10px}
+/* marquee */
+.marq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marq-in{display:flex;gap:54px;width:max-content;animation:sc 30s linear infinite}
+.marq-in span{font-size:19px;font-weight:700;color:#565e78;white-space:nowrap}
+@keyframes sc{to{transform:translateX(-50%)}}
 
-/* contact */
-.contact{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:48px;text-align:center}
-.contact h2{font-size:clamp(24px,3vw,34px);margin-bottom:12px}
-.contact p{color:var(--muted);max-width:520px;margin:0 auto 26px}
-.contact .btns{justify-content:center}
+/* cta */
+.cta{background:linear-gradient(135deg,#0d1022,#141031 55%,#0d1e2a);border:1px solid #6c8cff44;border-radius:24px;padding:56px 48px;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:280px;background:radial-gradient(closest-side,#6c8cff33,transparent)}
+.cta h2{font-size:clamp(26px,3.4vw,38px);margin-bottom:13px;position:relative}
+.cta p{color:var(--muted);max-width:520px;margin:0 auto 30px;position:relative}
+.cta .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.hh-chip{margin-top:22px;font-size:13px;color:#67708c;position:relative}
+.hh-chip a{color:#9bb5ff}
 
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13px;text-align:center}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
+.rv{opacity:0;transform:translateY(44px) scale(.985);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
 
-@media(max-width:860px){
- .proj-in{grid-template-columns:1fr}
- .proj-img{min-height:230px}
- .two{grid-template-columns:1fr}
+@media(max-width:920px){
+ .hero-flex{grid-template-columns:1fr}
+ .show-in{grid-template-columns:1fr}
+ .show-txt{padding:30px 26px}
+ .ai-grid{grid-template-columns:1fr}
  .stats{grid-template-columns:repeat(2,1fr)}
  nav a.lnk{display:none}
- header{padding:120px 0 60px}
+ #hero{padding:130px 0 50px}
+ .show-view{min-height:260px}
 }
 </style>
 </head>
 <body>
-<div id="heroBg"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="grid-overlay"></div>
+<div id="prog"></div><div id="glow"></div>
+<div id="heroBg"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="gridov"></div>
 
 <nav><div class="wrap">
-  <div class="logo">N<span>.</span>Dev</div>
-  <div>
+  <div class="logo">nwl<span>.</span>dev</div>
+  <div style="display:flex;align-items:center">
     <a class="lnk" href="#pains">Задачи</a>
     <a class="lnk" href="#projects">Проекты</a>
-    <a class="lnk" href="#about">О подходе</a>
-    <a class="lnk nav-cta" href="https://github.com/nwl01234" target="_blank">GitHub ↗</a>
+    <a class="lnk" href="#ai">AI-подход</a>
+    <a class="lnk" href="https://github.com/nwl01234" target="_blank">GitHub ↗</a>
+    <a class="nc" href="#contact">Связаться</a>
   </div>
 </div></nav>
 
-<header><div class="wrap">
-  <div class="badge rv"><span class="dot"></span>Открыт к работе · fullstack + автоматизация</div>
-  <h1 class="title rv">Автоматизирую бизнес-процессы:<br><span class="grad-txt">CRM, боты, дашборды, внутренние сервисы</span></h1>
-  <p class="lead rv">Разработчик с AI-усилением. Полный цикл — архитектура, код, тесты, деплой. Каждый проект в этом портфолио открыт в коде и запускается с нуля за две минуты — можете проверить всё руками.</p>
-  <div class="btns rv">
-    <a class="btn hero" href="#projects">Смотреть проекты →</a>
-    <a class="btn ghost" href="https://github.com/nwl01234" target="_blank">GitHub: все репозитории</a>
+<section id="hero"><div class="wrap">
+  <div class="hero-flex">
+    <div>
+      <div class="bdg rv"><span class="dot"></span>Открыт к предложениям · вайб-кодер / fullstack</div>
+      <h1 class="tt rv d1">Разработчик с <span class="gt">AI-усилением</span></h1>
+      <p class="sub rv d2">Автоматизация бизнес-процессов, внутренние инструменты, CRM, Telegram-боты, дашборды. Архитектуру, код, тесты и деплой держу на себе — AI только ускоряет рутину.</p>
+      <div class="hstats rv d2">
+        <div class="hstat"><b>4 рабочих продукта</b></div>
+        <div class="hstat"><b>Демо за 2 минуты</b> — каждый запуск из README</div>
+        <div class="hstat"><b>CI и тесты</b> зелёные на каждый пуш</div>
+      </div>
+      <div class="rv d3" style="display:flex;gap:14px;flex-wrap:wrap">
+        <a class="btn h" href="#projects">Смотреть проекты ↓</a>
+        <a class="btn g" href="https://github.com/nwl01234" target="_blank">GitHub — весь код ↗</a>
+      </div>
+    </div>
+    <div class="rv d2">
+      <div class="brw">
+        <div class="brw-bar"><span class="c3 r"></span><span class="c3 y"></span><span class="c3 g"></span><span class="brw-url" id="url">orbit-crm · дашборд</span></div>
+        <div class="brw-view" id="hs">
+          <div class="slide on"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/1.png" alt="orbit-crm дашборд"></div>
+          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/2.png" alt="kanban сделки"></div>
+          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/skrin/1.png" alt="business-flow дашборд"></div>
+          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/autoshop/main/skrin/1.png" alt="autoshop витрина"></div>
+        </div>
+        <div class="dots" id="hd"></div>
+        <div class="brw-cap">Живая витрина — реальные экраны работающих приложений</div>
+      </div>
+    </div>
   </div>
   <div class="stats rv" id="stats">
-    <div class="stat"><b data-n="8">0</b><span>публичных проектов с кодом</span></div>
-    <div class="stat"><b data-n="6">0</b><span>из них — полноценные приложения</span></div>
-    <div class="stat"><b data-n="19">0</b><span>текстов и метрик качества поверх кода</span></div>
-    <div class="stat"><b data-n="2">0</b><span>минуты — запуск любого демо из README</span></div>
+    <div class="stat"><b data-n="8">0</b><span>публичных репозиториев с проектами</span></div>
+    <div class="stat"><b data-n="4">0</b><span>готовых продукта: запущены, открыты в коде</span></div>
+    <div class="stat"><b data-n="2">0</b><span>минуты — ресурс для запуска любого проекта</span></div>
+    <div class="stat"><b data-n="100">0</b><span>% автотестов зелёные после каждого пуша</span></div>
   </div>
-</div></header>
+</div></section>
+
+<div class="marq"><div class="marq-in">
+  <span>Python</span><span>FastAPI</span><span>SQLAlchemy 2</span><span>PostgreSQL</span><span>React</span><span>TypeScript</span><span>Tailwind</span><span>WebSocket</span><span>aiogram 3</span><span>JWT</span><span>Docker</span><span>GitHub Actions</span><span>pytest</span><span>RAG</span>
+  <span>Python</span><span>FastAPI</span><span>SQLAlchemy 2</span><span>PostgreSQL</span><span>React</span><span>TypeScript</span><span>Tailwind</span><span>WebSocket</span><span>aiogram 3</span><span>JWT</span><span>Docker</span><span>GitHub Actions</span><span>pytest</span><span>RAG</span>
+</div></div>
 
 <section id="pains"><div class="wrap">
-  <div class="sec-head rv"><h2>Какие задачи я закрываю</h2><p>Формулировки — языком бизнеса, решения — языком кода.</p></div>
+  <div class="sh rv"><h2>Какие задачи я закрываю</h2><p>Формулировки — на языке бизнеса, решения — рабочим кодом, который вы можете открыть прямо сейчас.</p></div>
   <div class="pains">
-    <div class="pain rv"><div class="p">⤫ Заявки теряются, живёт всё в переписках</div><h3>Приём заявок без человека</h3><p>Telegram-бот принимает заказ, сам сверяет остатки, пишет акт в журнал и уведомляет менеджера — handwritten-рутина исчезает.</p><div class="r">✓ business-flow-automator</div></div>
-    <div class="pain rv"><div class="p">⤫ «Кто поменял в CRM? — никто не знаю»</div><h3>Прозрачность вместо хаоса</h3><p>Роли (admin/manager), полный аудит действий, канбан со сделками — видно, кто, что и когда менял.</p><div class="r">✓ orbit-crm</div></div>
-    <div class="pain rv"><div class="p">⤫ Сотрудники ищут документы по офису</div><h3>Ответы по базе знаний за секунды</h3><p>Бот-ассистент отвечает только по документам компании, каждая цитата со ссылкой на источник — без выдумываний.</p><div class="r">✓ rag-docs-bot</div></div>
-    <div class="pain rv"><div class="p">⤫ Отчёты собираются руками впотёмках</div><h3>Дашборд вместо Excel</h3><p>Real-time панель операций, аналитика, выгрузки, метрики. Руководитель видит состояние бизнеса сразу после логина.</p><div class="r">✓ дашборды во всех проектах</div></div>
-    <div class="pain rv"><div class="p">⤫ Интернет-магазин есть — продаж нет: консультант не отвечает</div><h3>Витрина + AI-консультант</h3><p>Каталог, корзина, консультация — заказ уходит напрямую менеджеру в Telegram, сценарий покупки не обрывается.</p><div class="r">✓ autoshop</div></div>
-    <div class="pain rv"><div class="p">⤫ Рутинные операции повторяются десятки раз в день</div><h3>Внутренние инструменты под процесс</h3><p>Скрипты, генераторы документов, интеграционные шаги под конкретный процесс вашего бизнеса — не универсальный конструктор, а инструмент под задачу.</p><div class="r">✓ интеграции и автоматизации</div></div>
+    <div class="pain rv"><div class="pb">✕ Заявки теряются в переписках</div><h3>Приём заявок без человека</h3><p>Telegram-бот принимает заказ, сам сверяет остатки, пишет в журнал операций и уведомляет менеджера.</p><div class="pr"><a href="https://github.com/nwl01234/business-flow-automator">✓ business-flow-automator</a></div></div>
+    <div class="pain rv d1"><div class="pb">✕ «Кто поменял в CRM?» — никто не знает</div><h3>Прозрачность вместо хаоса</h3><p>Роли admin/manager, аудит каждого действия, канбан сделок — видно, кто, что и когда менял.</p><div class="pr"><a href="https://github.com/nwl01234/orbit-crm">✓ orbit-crm</a></div></div>
+    <div class="pain rv d2"><div class="pb">✕ Сотрудники ищут документы часами</div><h3>Ответы по базе за секунды</h3><p>Бот отвечает только по документам компании, каждый ответ — со ссылкой на источник, без выдумываний.</p><div class="pr"><a href="https://github.com/nwl01234/rag-docs-bot">✓ rag-docs-bot</a></div></div>
+    <div class="pain rv d3"><div class="pb">✕ Отчёты собираются вручную</div><h3>Real-time дашборд</h3><p>Живая панель операций и аналитика: руководитель видит состояние сразу после логина.</p><div class="pr">✓ во всех проектах</div></div>
   </div>
 </div></section>
 
 <section id="projects"><div class="wrap">
-  <div class="sec-head rv"><h2>Проекты <span class="grad-txt">— все запущены, всё открыто</span></h2><p>Каждый проект: реальные скриншоты интерфейса, инструкция демо-запуска за 2 минуты, код на GitHub.</p></div>
+  <div class="sh rv"><h2>Витрина <span class="gt">— 4 продукта</span></h2><p>Наведите курсор на скрин — файл живой. Под каждым — одинаковая логика: реальные интерфейсы, демо-запуск из README, код открыт.</p></div>
 
-  <div class="proj rv" data-tilt><div class="proj-in">
-    <div class="proj-txt">
-      <div class="tagrow"><span class="tag">FastAPI</span><span class="tag">React · TS</span><span class="tag">WebSocket</span><span class="tag">JWT · роли</span><span class="tag">Docker</span></div>
+  <div class="show rv" id="bf"><div class="show-in">
+    <div class="show-txt">
+      <div class="tags"><span class="tag">FastAPI</span><span class="tag">React · TS</span><span class="tag">WebSocket</span><span class="tag">JWT · роли</span><span class="tag">Docker</span></div>
       <h3><a href="https://github.com/nwl01234/business-flow-automator" target="_blank">business-flow-automator ↗</a></h3>
       <ul>
-        <li>Telegram-приём заказов: клиент пишет — заявка сама падает в систему</li>
-        <li>Автосверка остатков: заказ не принято, если товара нет — всё честно</li>
-        <li>Real-time дашборд операций и аналитика по ним</li>
-        <li>Роли admin/manager/bot — от бота можно разделить доступы</li>
+        <li>Telegram-приём заказов: клиент написал — заявка уже в системе</li>
+        <li>Автопроверка остатков: нет товара — заказ не принят, без ручных споров</li>
+        <li>Журнал всех операций + real-time дашборд их анализа</li>
+        <li>Роли admin / manager / bot — у бота свои права, у людей свои</li>
       </ul>
-      <span class="res">Демо за 2 минуты: clone → docker compose up → admin/admin123</span>
+      <span class="res">🚀 Демо: git clone → docker compose up → admin/admin123</span>
     </div>
-    <div class="proj-img"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/skrin/1.png" alt="Дашборд business-flow-automator" loading="lazy"></div>
+    <div class="show-view">
+      <div class="fr on"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/skrin/1.png" loading="lazy"></div>
+      <div class="fr"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/skrin/2.png" loading="lazy"></div>
+      <div class="fr"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/skrin/3.png" loading="lazy"></div>
+      <div class="mini" data-frames="bf"><img class="on" src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/skrin/1.png"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/skrin/2.png"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/skrin/3.png"></div>
+      <div class="tags2"><span class="live"></span>Живой дашборд операций</div>
+    </div>
   </div></div>
 
-  <div class="proj rv" data-tilt><div class="proj-in">
-    <div class="proj-txt">
-      <div class="tagrow"><span class="tag">FastAPI</span><span class="tag">SQLAlchemy</span><span class="tag">Tailwind</span><span class="tag">Alpine.js</span><span class="tag">Telegram</span></div>
+  <div class="show rv" id="oc"><div class="show-in">
+    <div class="show-txt">
+      <div class="tags"><span class="tag">FastAPI</span><span class="tag">SQLAlchemy</span><span class="tag">Tailwind</span><span class="tag">Alpine</span><span class="tag">Telegram-бот</span></div>
       <h3><a href="https://github.com/nwl01234/orbit-crm" target="_blank">orbit-crm ↗</a></h3>
       <ul>
-        <li>CRM корпоративного класса: сделки, клиенты, воронки</li>
-        <li>Канбан drag-n-drop, KPI-дашборд, аудит каждого действия</li>
-        <li>Роли admin/manager/viewer, JWT-авторизация</li>
-        <li>AI-ассистент по внутренним данным CRM — ответы без «фантазий»</li>
+        <li>CRM корпоративного уровня: сделки, клиенты, воронки</li>
+        <li>Канбан drag-n-drop + KPI-дашборд + полный аудит</li>
+        <li>Роли admin / manager / viewer, JWT-вход</li>
+        <li>AI-ассистент отвечает по данным CRM — со ссылкой на источник</li>
       </ul>
-      <span class="res">Демо: clone → uvicorn app.main:app → admin/admin123 (данные засеиваются сами)</span>
+      <span class="res">🚀 Демо: clone → uvicorn app.main:app → admin/admin123, данные засеиваются сами</span>
     </div>
-    <div class="proj-img"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/1.png" alt="Дашборд orbit-crm" loading="lazy"></div>
+    <div class="show-view">
+      <div class="fr on"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/1.png" loading="lazy"></div>
+      <div class="fr"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/2.png" loading="lazy"></div>
+      <div class="fr"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/3.png" loading="lazy"></div>
+      <div class="fr"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/5.png" loading="lazy"></div>
+      <div class="mini" data-frames="oc"><img class="on" src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/1.png"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/2.png"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/3.png"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/5.png"></div>
+      <div class="tags2"><span class="live"></span>4 экрана: дашборд · канбан · чат · аналитика</div>
+    </div>
   </div></div>
 
-  <div class="proj rv" data-tilt><div class="proj-in">
-    <div class="proj-txt">
-      <div class="tagrow"><span class="tag">Telegram WebApp</span><span class="tag">Deep-link</span><span class="tag">AI-консультант</span><span class="tag">Haptics</span></div>
+  <div class="show rv" id="as"><div class="show-in">
+    <div class="show-txt">
+      <div class="tags"><span class="tag">Telegram WebApp</span><span class="tag">Deep-link</span><span class="tag">AI-консультант</span><span class="tag">Haptics</span></div>
       <h3><a href="https://github.com/nwl01234/autoshop" target="_blank">autoshop ↗</a></h3>
       <ul>
-        <li>Витрина магазина с корзиной внутри Telegram</li>
-        <li>AI-консультант ведёт по каталогу, заказ → глубокая ссылка в бота — сценарий покупки не рвётся</li>
-        <li>Тёмная/светлая тема, маппится на стили Telegram — «как родное»</li>
-        <li>Реальный каталог из живого склада, не мокап</li>
+        <li>Витрина магазина с корзиной прямо в Telegram</li>
+        <li>Заказ уходит deep-link'ом менеджеру в бота — сценарий покупки не обрывается</li>
+        <li>Тёмная/светлая тема подхватывается из Telegram</li>
       </ul>
-      <span class="res">Демо: открытый репозиторий + скриншот витрины и бота</span>
+      <span class="res">🚀 Демо: каталог, корзина и deep-link в бота — код и скрины открыты</span>
     </div>
-    <div class="proj-img"><img src="https://raw.githubusercontent.com/nwl01234/autoshop/main/skrin/1.png" alt="Витрина autoshop" loading="lazy"></div>
+    <div class="show-view">
+      <div class="fr on"><img src="https://raw.githubusercontent.com/nwl01234/autoshop/main/skrin/1.png" loading="lazy"></div>
+      <div class="fr"><img src="https://raw.githubusercontent.com/nwl01234/autoshop/main/skrin/2.png" loading="lazy"></div>
+      <div class="mini" data-frames="as"><img class="on" src="https://raw.githubusercontent.com/nwl01234/autoshop/main/skrin/1.png"><img src="https://raw.githubusercontent.com/nwl01234/autoshop/main/skrin/2.png"></div>
+      <div class="tags2"><span class="live"></span>Витрина внутри Telegram</div>
+    </div>
   </div></div>
 
-  <div class="proj rv" data-tilt><div class="proj-in">
-    <div class="proj-txt">
-      <div class="tagrow"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">FastAPI</span><span class="tag">pytest</span></div>
+  <div class="show rv" id="rg"><div class="show-in">
+    <div class="show-txt">
+      <div class="tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">FastAPI</span><span class="tag">pytest</span></div>
       <h3><a href="https://github.com/nwl01234/rag-docs-bot" target="_blank">rag-docs-bot ↗</a></h3>
       <ul>
-        <li>Сотрудник задаёт вопрос — бот отвечает по документам компании</li>
-        <li>Каждый ответ цитирует источник: ссылка на конкретный документ</li>
-        <li>Блок выдумывания: если в базе нет — честно говорит «нет данных»</li>
-        <li>Работает офлайн, без секретов и ключей — запускается сразу</li>
+        <li>Вопрос по документам компании — ответ со ссылкой на источник</li>
+        <li>Блок выдумывания: нет в базе — честно говорит «нет данных»</li>
+        <li>Работает офлайн, без секретов — запускается сразу</li>
       </ul>
-      <span class="res">Демо: python demo.py → 3 вопроса-ответа, /docs — открытый API</span>
+      <span class="res">🚀 Демо: python demo.py — 3 вопроса-ответа; /docs — открытый API</span>
     </div>
-    <div class="proj-img"><img src="https://raw.githubusercontent.com/nwl01234/rag-docs-bot/main/skrin/api.png" alt="API rag-docs-bot" loading="lazy"></div>
-  </div></div>
-
-  <div class="proj rv" data-tilt><div class="proj-in">
-    <div class="proj-txt">
-      <div class="tagrow"><span class="tag">LLM fine-tuning</span><span class="tag">LoRA</span><span class="tag">Метрики</span><span class="tag">golden dataset</span></div>
-      <h3><a href="https://github.com/nwl01234/llm-finetune-studio" target="_blank">llm-finetune-studio ↗</a></h3>
-      <ul>
-        <li>Дообучение модели под задачи клиента — intents, ответственный стиль</li>
-        <li>Метрики по эпохам через golden-набор: loss ↓ 0.5754 → 0.0194, accuracy 100% (8 эпох)</li>
-        <li>Дашборд обучения — видно весь progress: loss, accuracy, GPU</li>
-        <li>Даёт модели под конкретный бизнес, не «облачный лего»</li>
-      </ul>
-      <span class="res">Демо: реальные кривые обучения — запуск и метрики в README</span>
+    <div class="show-view">
+      <div class="fr on"><img src="https://raw.githubusercontent.com/nwl01234/rag-docs-bot/main/skrin/api.png" loading="lazy"></div>
+      <div class="tags2"><span class="live"></span>Открытая документация API</div>
     </div>
-    <div class="proj-img"><img src="https://raw.githubusercontent.com/nwl01234/llm-finetune-studio/main/skrin/dashboard.png" alt="Дашборд llm-finetune-studio" loading="lazy"></div>
-  </div></div>
-
-  <div class="proj rv" data-tilt><div class="proj-in">
-    <div class="proj-txt">
-      <div class="tagrow"><span class="tag">Python</span><span class="tag">CAD</span><span class="tag">pytest</span></div>
-      <h3><a href="https://github.com/nwl01234/cad-copilot" target="_blank">cad-copilot ↗</a></h3>
-      <ul>
-        <li>AI-помощник черчения: из текстового запроса — план чертежа</li>
-        <li>Валидация параметров — не пропустит некорректную геометрию</li>
-        <li>Экономит инженерное время на рутинном черчении</li>
-      </ul>
-      <span class="res">Демо: GIF ниже — живой ход генерации</span>
-    </div>
-    <div class="proj-img"><img class="gif" src="https://raw.githubusercontent.com/nwl01234/cad-copilot/main/skrin/plan_v2.gif" alt="GIF демо cad-copilot" loading="lazy"></div>
   </div></div>
 </div></section>
 
-<div class="wrap"><div class="band rv"><img src="https://raw.githubusercontent.com/nwl01234/llm-finetune-studio/main/skrin/loss_curve.svg" alt="Кривая обучения" loading="lazy"></div></div>
-
-<div class="marq rv" style="margin-top:90px"><div class="marq-in">
-  <span>Python</span><span>FastAPI</span><span>SQLAlchemy</span><span>PostgreSQL</span><span>React</span><span>TypeScript</span><span>Tailwind</span><span>WebSocket</span><span>aiogram 3</span><span>JWT</span><span>Docker</span><span>GitHub Actions</span><span>pytest</span><span>RAG / LLM</span>
-  <span>Python</span><span>FastAPI</span><span>SQLAlchemy</span><span>PostgreSQL</span><span>React</span><span>TypeScript</span><span>Tailwind</span><span>WebSocket</span><span>aiogram 3</span><span>JWT</span><span>Docker</span><span>GitHub Actions</span><span>pytest</span><span>RAG / LLM</span>
-</div></div>
-
-<section id="about"><div class="wrap">
-  <div class="sec-head rv"><h2>Что я делаю лучше всего</h2></div>
-  <div class="two">
-    <div class="rv">
-      <p>Полный цикл — от схемы базы до работающего сервиса в проде. Бэкенд берут FastAPI + SQLAlchemy 2, интерфейсы — React/TypeScript или легковесные Jinja2+Alpine, боты — aiogram 3 в связке с основным приложением.</p>
-      <p>Привычка сеньера — ревьюить себя же: тесты, CI на каждый пуш, оценка качества там, где в этом есть смысл (golden-данные, метрики, регрессия). AI закрывает рутину и кухню — архитектурные решения, код и результат были, остались и будут на мне.</p>
-      <p>В последнем репо оценивал степень AI-вклада в дашборд качества: golden-набор, LLM-as-judge, общие ответы против оригинала, A/B сценарий, регрессия после обновления.</p>
-    </div>
-    <div class="ai-card rv">
-      <h4>Как использую AI в разработке</h4>
-      <p><b>1. Ускоритель рутинного кода.</b> Схемы API, миграции, заготовки тестов — AI пишет черновик, я проверяю и правлю.</p>
-      <p><b>2. Ревьюер.</b> Ищу дыры в логике, edge-cases, слабые места в обработке ошибок.</p>
-      <p><b>3. Документация.</b> README, changelog, комментарии к сложным местам.</p>
-      <p><b>4. Ассистент по данным.</b> Внутри проектов — RAG-бот, цитирующий источники, не фантазирующий.</p>
-      <p style="color:#3ddad7;font-weight:600;margin-bottom:0">Отвечаю за архитектуру, код, тесты, деплой и результат.</p>
-    </div>
+<section id="ai"><div class="wrap">
+  <div class="sh rv"><h2>Как я использую AI в разработке</h2></div>
+  <div class="ai-grid">
+    <div class="ai rv"><div class="n">01</div><h4>Ускорение рутинного кода</h4><p>Черновики API-схем, миграций, заготовок тестов и документации — AI пишет основу, я проверяю, правлю и отвечаю за итог.</p></div>
+    <div class="ai rv d1"><div class="n">02</div><h4>Ревью и поиск краёв</h4><p>AI помогает находить edge-cases и дыры в обработке ошибок — до того, как их найдёт заказчик.</p></div>
+    <div class="ai rv d2"><div class="n">03</div><h4>Ответственность на мне</h4><p>Архитектура, код, тесты, метрики качества и деплой — всегда проверены и подписаны мной, а не «сгенерированы».</p></div>
+  </div>
+  <div class="extra rv" style="margin-top:34px">
+    <a class="xp" href="https://github.com/nwl01234/llm-finetune-studio" target="_blank">⚙ Дополнительно: <b>llm-finetune-studio</b> — fine-tuning моделей и дашборд метрик</a>
+    <a class="xp" href="https://github.com/nwl01234/cad-copilot" target="_blank">⚙ Дополнительно: <b>cad-copilot</b> — AI-ассистент черчения из запроса</a>
   </div>
 </div></section>
 
 <section id="contact"><div class="wrap">
-  <div class="contact rv">
-    <h2>Смотрим вживую</h2>
-    <p>Любой проект запускается у вас локально за 2 минуты по README, или покажу демо на созвоне. Открыт к тестовым заданиям.</p>
+  <div class="cta rv">
+    <h2>Готов обсудить ваш проект</h2>
+    <p>Любой из проектов запускается у вас локально за 2 минуты по README — проверьте руками. Отвечаю быстро, открыт к тестовому заданию.</p>
     <div class="btns">
-      <a class="btn hero" href="https://github.com/nwl01234" target="_blank">GitHub — все проекты ↗</a>
-      <a class="btn ghost" href="#projects">↑ К проектам</a>
+      <a class="btn h" href="https://github.com/nwl01234" target="_blank">GitHub: nwl01234 ↗</a>
+      <a class="btn g" href="#projects">↑ Ещё раз к проектам</a>
     </div>
+    <div class="hh-chip">Больше откликов и контакты — в резюме на hh.ru</div>
   </div>
 </div></section>
 
 <footer><div class="wrap">Николай · разработчик с AI-усилением · <a href="https://github.com/nwl01234" style="color:#9bb5ff">github.com/nwl01234</a></div></footer>
 
 <script>
-// scroll reveal
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
+// progress + glow
+addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+addEventListener('mousemove',e=>{const g=document.getElementById('glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+// pain spotlight
+document.querySelectorAll('.pain').forEach(p=>p.addEventListener('mousemove',e=>{const r=p.getBoundingClientRect();p.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');p.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%')}));
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-
 // counters
-const so=new IntersectionObserver(es=>es.forEach(e=>{
-  if(!e.isIntersecting)return;so.disconnect();
-  document.querySelectorAll('#stats b').forEach(b=>{
-    const n=+b.dataset.n,t0=performance.now();
-    const tick=t=>{const p=Math.min((t-t0)/1400,1);b.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(tick)};
-    requestAnimationFrame(tick);
-  });
-}),{threshold:.4});
-so.observe(document.getElementById('stats'));
-
-// tilt
-document.querySelectorAll('[data-tilt]').forEach(card=>{
-  card.addEventListener('mousemove',e=>{
-    const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-    card.style.transform=`perspective(1000px) rotateX(${(-y*2).toFixed(2)}deg) rotateY(${(x*2).toFixed(2)}deg)`;
-  });
-  card.addEventListener('mouseleave',()=>card.style.transform='');
+new IntersectionObserver((es,o)=>{if(!es[0].isIntersecting)return;o.disconnect();
+document.querySelectorAll('#stats b').forEach(b=>{const n=+b.dataset.n,t0=performance.now();
+const tick=t=>{const p=Math.min((t-t0)/1400,1);b.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)})},{threshold:.4}).observe(document.getElementById('stats'));
+// hero slideshow
+const slides=[...document.querySelectorAll('#hs .slide')],caps=['orbit-crm · дашборд','orbit-crm · kanban сделок','business-flow · дашборд','autoshop · витрина'],dotsBox=document.getElementById('hd');
+slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dts'+(i?'':' on');d.onclick=()=>go(i);dotsBox.append(d)});
+let cur=0;const go=i=>{slides[cur].classList.remove('on');dotsBox.children[cur].classList.remove('on');cur=i%slides.length;slides[cur].classList.add('on');dotsBox.children[cur].classList.add('on');document.getElementById('url').textContent=caps[cur]};
+setInterval(()=>go(cur+1),4200);
+// project frame switcher
+document.querySelectorAll('.mini[data-frames]').forEach(box=>{
+ const id=box.dataset.frames,frames=[...document.querySelectorAll('#'+id+' .fr')],thumbs=[...box.querySelectorAll('img')];
+ let fi=0;thumbs.forEach((t,i)=>t.onclick=()=>{frames[fi].classList.remove('on');thumbs[fi].classList.remove('on');fi=i;frames[i].classList.add('on');thumbs[i].classList.add('on')});
+ let auto=setInterval(()=>{if(!document.querySelector('#'+id).matches(':hover')){frames[fi].classList.remove('on');thumbs[fi].classList.remove('on');fi=(fi+1)%frames.length;frames[fi].classList.add('on');thumbs[fi].classList.add('on')}},4500);
 });
 </script>
 </body>
