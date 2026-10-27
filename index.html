@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Николай — разработчик с AI-усилением | Портфолио</title>
+<meta name="description" content="Автоматизация бизнес-процессов: CRM, боты, дашборды, внутренние сервисы. Полный цикл — от архитектуры до деплоя.">
+<style>
+:root{
+  --bg:#07080f; --bg2:#0c0e1a; --card:rgba(255,255,255,.04); --line:rgba(255,255,255,.09);
+  --txt:#e9ecf5; --muted:#8b93ab; --acc:#6c8cff; --acc2:#a06cff; --acc3:#3ddad7;
+  --grad:linear-gradient(90deg,#6c8cff,#a06cff 45%,#3ddad7);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;overflow-x:hidden;line-height:1.6}
+::selection{background:#6c8cff55}
+h1,h2,h3{font-weight:800;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+
+/* ===== hero ===== */
+#heroBg{position:fixed;inset:0;z-index:-2;background:
+ radial-gradient(600px 400px at 15% 20%,#6c8cff22,transparent),
+ radial-gradient(700px 500px at 85% 30%,#a06cff22,transparent),
+ radial-gradient(600px 500px at 50% 90%,#3ddad71a,transparent),var(--bg)}
+.blob{position:fixed;border-radius:50%;filter:blur(90px);opacity:.16;z-index:-1;pointer-events:none}
+.b1{width:420px;height:420px;background:#6c8cff;top:-120px;left:-80px;animation:drift 22s ease-in-out infinite alternate}
+.b2{width:520px;height:520px;background:#a06cff;top:8%;right:-160px;animation:drift 28s ease-in-out infinite alternate-reverse}
+.b3{width:380px;height:380px;background:#3ddad7;bottom:-140px;left:35%;animation:drift 25s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(70px,60px) scale(1.15)}}
+.grid-overlay{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+ background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+ background-size:56px 56px;mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 40%,transparent)}
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,8,15,.65);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;font-size:17px}.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav a.lnk{color:var(--muted);font-size:14px;margin-left:26px;transition:.2s}
+nav a.lnk:hover{color:#fff}
+.nav-cta{background:var(--grad);color:#fff !important;padding:7px 16px;border-radius:99px;font-size:13px;font-weight:600}
+
+header{pt:0;padding:150px 0 90px;position:relative}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:#b9c2dd;background:var(--card);border:1px solid var(--line);padding:7px 14px;border-radius:99px}
+.dot{width:7px;height:7px;border-radius:50%;background:#3ddad7;box-shadow:0 0 10px #3ddad7;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.4}}
+h1.title{font-size:clamp(34px,5.4vw,62px);line-height:1.12;margin:26px 0 20px;max-width:880px}
+.grad-txt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+header p.lead{font-size:18px;color:var(--muted);max-width:640px;margin-bottom:34px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:13px 26px;border-radius:12px;font-weight:600;font-size:15px;transition:.25s;display:inline-flex;align-items:center;gap:8px}
+.btn.hero{background:var(--grad);color:#fff;box-shadow:0 8px 30px #6c8cff44}
+.btn.hero:hover{transform:translateY(-2px);box-shadow:0 12px 40px #6c8cff66}
+.btn.ghost{border:1px solid var(--line);color:var(--txt);background:var(--card)}
+.btn.ghost:hover{border-color:#6c8cff;color:#cfdbff}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:70px}
+.stat{background:var(--bg2);padding:26px 22px}
+.stat b{font-size:clamp(24px,3vw,34px);display:block;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* sections */
+section{padding:90px 0}
+.sec-head h2{font-size:clamp(26px,3.4vw,40px);margin-bottom:14px}
+.sec-head p{color:var(--muted);max-width:640px}
+.sec-head{margin-bottom:48px}
+
+/* pains */
+.pains{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.pain{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;transition:.3s}
+.pain:hover{border-color:#6c8cff66;transform:translateY(-4px)}
+.pain .p{color:#ff7d90;font-size:14px;font-weight:600;margin-bottom:6px;display:flex;gap:8px;align-items:center}
+.pain .r{color:#3ddad7;font-size:14px;font-weight:600;display:flex;gap:8px;align-items:center;margin-top:10px}
+.pain h3{font-size:17px;margin-bottom:8px}
+.pain p{color:var(--muted);font-size:14.5px}
+
+/* projects */
+.proj{background:var(--bg2);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-bottom:26px;transition:.35s;transform-style:preserve-3d}
+.proj:hover{border-color:#6c8cff55;box-shadow:0 20px 60px rgba(108,140,255,.12)}
+.proj-in{display:grid;grid-template-columns:1.05fr .95fr;gap:0;align-items:stretch}
+.proj-txt{padding:38px 40px;display:flex;flex-direction:column;justify-content:center}
+.tagrow{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
+.tag{font-size:12px;color:#a8b3d4;border:1px solid var(--line);padding:4px 11px;border-radius:99px;background:rgba(255,255,255,.03)}
+.proj h3{font-size:24px;margin-bottom:12px}
+.proj h3 a:hover{color:#9bb5ff}
+.proj ul{list-style:none;color:var(--muted);font-size:14.5px;margin-bottom:22px}
+.proj ul li{padding-left:20px;position:relative;margin-bottom:7px}
+.proj ul li::before{content:"▸";position:absolute;left:0;color:var(--acc)}
+.proj-img{position:relative;min-height:300px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#05060b}
+.proj-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.proj:hover .proj-img img{transform:scale(1.05)}
+.proj-img .gif{height:260px;object-fit:contain}
+.res{font-size:13.5px;color:#9fe8dd;background:rgba(61,218,215,.07);border:1px solid rgba(61,218,215,.2);padding:9px 14px;border-radius:10px;display:inline-block;margin-top:auto}
+
+/* gif hero band */
+.band{border-radius:20px;overflow:hidden;border:1px solid var(--line);position:relative}
+.band img{width:100%;display:block}
+
+/* stack marquee */
+.marq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marq-in{display:flex;gap:56px;width:max-content;animation:scroll 32s linear infinite}
+.marq-in span{font-size:19px;font-weight:700;color:#5f6883;white-space:nowrap;letter-spacing:.02em}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* about */
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start}
+.two p{color:var(--muted);font-size:15.5px;margin-bottom:16px}
+.ai-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+.ai-card h4{font-size:15px;margin-bottom:14px;color:#cfdbff}
+.ai-card p{font-size:14px;margin-bottom:10px}
+
+/* contact */
+.contact{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:48px;text-align:center}
+.contact h2{font-size:clamp(24px,3vw,34px);margin-bottom:12px}
+.contact p{color:var(--muted);max-width:520px;margin:0 auto 26px}
+.contact .btns{justify-content:center}
+
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13px;text-align:center}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+
+@media(max-width:860px){
+ .proj-in{grid-template-columns:1fr}
+ .proj-img{min-height:230px}
+ .two{grid-template-columns:1fr}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ nav a.lnk{display:none}
+ header{padding:120px 0 60px}
+}
+</style>
+</head>
+<body>
+<div id="heroBg"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="grid-overlay"></div>
+
+<nav><div class="wrap">
+  <div class="logo">N<span>.</span>Dev</div>
+  <div>
+    <a class="lnk" href="#pains">Задачи</a>
+    <a class="lnk" href="#projects">Проекты</a>
+    <a class="lnk" href="#about">О подходе</a>
+    <a class="lnk nav-cta" href="https://github.com/nwl01234" target="_blank">GitHub ↗</a>
+  </div>
+</div></nav>
+
+<header><div class="wrap">
+  <div class="badge rv"><span class="dot"></span>Открыт к работе · fullstack + автоматизация</div>
+  <h1 class="title rv">Автоматизирую бизнес-процессы:<br><span class="grad-txt">CRM, боты, дашборды, внутренние сервисы</span></h1>
+  <p class="lead rv">Разработчик с AI-усилением. Полный цикл — архитектура, код, тесты, деплой. Каждый проект в этом портфолио открыт в коде и запускается с нуля за две минуты — можете проверить всё руками.</p>
+  <div class="btns rv">
+    <a class="btn hero" href="#projects">Смотреть проекты →</a>
+    <a class="btn ghost" href="https://github.com/nwl01234" target="_blank">GitHub: все репозитории</a>
+  </div>
+  <div class="stats rv" id="stats">
+    <div class="stat"><b data-n="8">0</b><span>публичных проектов с кодом</span></div>
+    <div class="stat"><b data-n="6">0</b><span>из них — полноценные приложения</span></div>
+    <div class="stat"><b data-n="19">0</b><span>текстов и метрик качества поверх кода</span></div>
+    <div class="stat"><b data-n="2">0</b><span>минуты — запуск любого демо из README</span></div>
+  </div>
+</div></header>
+
+<section id="pains"><div class="wrap">
+  <div class="sec-head rv"><h2>Какие задачи я закрываю</h2><p>Формулировки — языком бизнеса, решения — языком кода.</p></div>
+  <div class="pains">
+    <div class="pain rv"><div class="p">⤫ Заявки теряются, живёт всё в переписках</div><h3>Приём заявок без человека</h3><p>Telegram-бот принимает заказ, сам сверяет остатки, пишет акт в журнал и уведомляет менеджера — handwritten-рутина исчезает.</p><div class="r">✓ business-flow-automator</div></div>
+    <div class="pain rv"><div class="p">⤫ «Кто поменял в CRM? — никто не знаю»</div><h3>Прозрачность вместо хаоса</h3><p>Роли (admin/manager), полный аудит действий, канбан со сделками — видно, кто, что и когда менял.</p><div class="r">✓ orbit-crm</div></div>
+    <div class="pain rv"><div class="p">⤫ Сотрудники ищут документы по офису</div><h3>Ответы по базе знаний за секунды</h3><p>Бот-ассистент отвечает только по документам компании, каждая цитата со ссылкой на источник — без выдумываний.</p><div class="r">✓ rag-docs-bot</div></div>
+    <div class="pain rv"><div class="p">⤫ Отчёты собираются руками впотёмках</div><h3>Дашборд вместо Excel</h3><p>Real-time панель операций, аналитика, выгрузки, метрики. Руководитель видит состояние бизнеса сразу после логина.</p><div class="r">✓ дашборды во всех проектах</div></div>
+    <div class="pain rv"><div class="p">⤫ Интернет-магазин есть — продаж нет: консультант не отвечает</div><h3>Витрина + AI-консультант</h3><p>Каталог, корзина, консультация — заказ уходит напрямую менеджеру в Telegram, сценарий покупки не обрывается.</p><div class="r">✓ autoshop</div></div>
+    <div class="pain rv"><div class="p">⤫ Рутинные операции повторяются десятки раз в день</div><h3>Внутренние инструменты под процесс</h3><p>Скрипты, генераторы документов, интеграционные шаги под конкретный процесс вашего бизнеса — не универсальный конструктор, а инструмент под задачу.</p><div class="r">✓ интеграции и автоматизации</div></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="sec-head rv"><h2>Проекты <span class="grad-txt">— все запущены, всё открыто</span></h2><p>Каждый проект: реальные скриншоты интерфейса, инструкция демо-запуска за 2 минуты, код на GitHub.</p></div>
+
+  <div class="proj rv" data-tilt><div class="proj-in">
+    <div class="proj-txt">
+      <div class="tagrow"><span class="tag">FastAPI</span><span class="tag">React · TS</span><span class="tag">WebSocket</span><span class="tag">JWT · роли</span><span class="tag">Docker</span></div>
+      <h3><a href="https://github.com/nwl01234/business-flow-automator" target="_blank">business-flow-automator ↗</a></h3>
+      <ul>
+        <li>Telegram-приём заказов: клиент пишет — заявка сама падает в систему</li>
+        <li>Автосверка остатков: заказ не принято, если товара нет — всё честно</li>
+        <li>Real-time дашборд операций и аналитика по ним</li>
+        <li>Роли admin/manager/bot — от бота можно разделить доступы</li>
+      </ul>
+      <span class="res">Демо за 2 минуты: clone → docker compose up → admin/admin123</span>
+    </div>
+    <div class="proj-img"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/skrin/1.png" alt="Дашборд business-flow-automator" loading="lazy"></div>
+  </div></div>
+
+  <div class="proj rv" data-tilt><div class="proj-in">
+    <div class="proj-txt">
+      <div class="tagrow"><span class="tag">FastAPI</span><span class="tag">SQLAlchemy</span><span class="tag">Tailwind</span><span class="tag">Alpine.js</span><span class="tag">Telegram</span></div>
+      <h3><a href="https://github.com/nwl01234/orbit-crm" target="_blank">orbit-crm ↗</a></h3>
+      <ul>
+        <li>CRM корпоративного класса: сделки, клиенты, воронки</li>
+        <li>Канбан drag-n-drop, KPI-дашборд, аудит каждого действия</li>
+        <li>Роли admin/manager/viewer, JWT-авторизация</li>
+        <li>AI-ассистент по внутренним данным CRM — ответы без «фантазий»</li>
+      </ul>
+      <span class="res">Демо: clone → uvicorn app.main:app → admin/admin123 (данные засеиваются сами)</span>
+    </div>
+    <div class="proj-img"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/1.png" alt="Дашборд orbit-crm" loading="lazy"></div>
+  </div></div>
+
+  <div class="proj rv" data-tilt><div class="proj-in">
+    <div class="proj-txt">
+      <div class="tagrow"><span class="tag">Telegram WebApp</span><span class="tag">Deep-link</span><span class="tag">AI-консультант</span><span class="tag">Haptics</span></div>
+      <h3><a href="https://github.com/nwl01234/autoshop" target="_blank">autoshop ↗</a></h3>
+      <ul>
+        <li>Витрина магазина с корзиной внутри Telegram</li>
+        <li>AI-консультант ведёт по каталогу, заказ → глубокая ссылка в бота — сценарий покупки не рвётся</li>
+        <li>Тёмная/светлая тема, маппится на стили Telegram — «как родное»</li>
+        <li>Реальный каталог из живого склада, не мокап</li>
+      </ul>
+      <span class="res">Демо: открытый репозиторий + скриншот витрины и бота</span>
+    </div>
+    <div class="proj-img"><img src="https://raw.githubusercontent.com/nwl01234/autoshop/main/skrin/1.png" alt="Витрина autoshop" loading="lazy"></div>
+  </div></div>
+
+  <div class="proj rv" data-tilt><div class="proj-in">
+    <div class="proj-txt">
+      <div class="tagrow"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">FastAPI</span><span class="tag">pytest</span></div>
+      <h3><a href="https://github.com/nwl01234/rag-docs-bot" target="_blank">rag-docs-bot ↗</a></h3>
+      <ul>
+        <li>Сотрудник задаёт вопрос — бот отвечает по документам компании</li>
+        <li>Каждый ответ цитирует источник: ссылка на конкретный документ</li>
+        <li>Блок выдумывания: если в базе нет — честно говорит «нет данных»</li>
+        <li>Работает офлайн, без секретов и ключей — запускается сразу</li>
+      </ul>
+      <span class="res">Демо: python demo.py → 3 вопроса-ответа, /docs — открытый API</span>
+    </div>
+    <div class="proj-img"><img src="https://raw.githubusercontent.com/nwl01234/rag-docs-bot/main/skrin/api.png" alt="API rag-docs-bot" loading="lazy"></div>
+  </div></div>
+
+  <div class="proj rv" data-tilt><div class="proj-in">
+    <div class="proj-txt">
+      <div class="tagrow"><span class="tag">LLM fine-tuning</span><span class="tag">LoRA</span><span class="tag">Метрики</span><span class="tag">golden dataset</span></div>
+      <h3><a href="https://github.com/nwl01234/llm-finetune-studio" target="_blank">llm-finetune-studio ↗</a></h3>
+      <ul>
+        <li>Дообучение модели под задачи клиента — intents, ответственный стиль</li>
+        <li>Метрики по эпохам через golden-набор: loss ↓ 0.5754 → 0.0194, accuracy 100% (8 эпох)</li>
+        <li>Дашборд обучения — видно весь progress: loss, accuracy, GPU</li>
+        <li>Даёт модели под конкретный бизнес, не «облачный лего»</li>
+      </ul>
+      <span class="res">Демо: реальные кривые обучения — запуск и метрики в README</span>
+    </div>
+    <div class="proj-img"><img src="https://raw.githubusercontent.com/nwl01234/llm-finetune-studio/main/skrin/dashboard.png" alt="Дашборд llm-finetune-studio" loading="lazy"></div>
+  </div></div>
+
+  <div class="proj rv" data-tilt><div class="proj-in">
+    <div class="proj-txt">
+      <div class="tagrow"><span class="tag">Python</span><span class="tag">CAD</span><span class="tag">pytest</span></div>
+      <h3><a href="https://github.com/nwl01234/cad-copilot" target="_blank">cad-copilot ↗</a></h3>
+      <ul>
+        <li>AI-помощник черчения: из текстового запроса — план чертежа</li>
+        <li>Валидация параметров — не пропустит некорректную геометрию</li>
+        <li>Экономит инженерное время на рутинном черчении</li>
+      </ul>
+      <span class="res">Демо: GIF ниже — живой ход генерации</span>
+    </div>
+    <div class="proj-img"><img class="gif" src="https://raw.githubusercontent.com/nwl01234/cad-copilot/main/skrin/plan_v2.gif" alt="GIF демо cad-copilot" loading="lazy"></div>
+  </div></div>
+</div></section>
+
+<div class="wrap"><div class="band rv"><img src="https://raw.githubusercontent.com/nwl01234/llm-finetune-studio/main/skrin/loss_curve.svg" alt="Кривая обучения" loading="lazy"></div></div>
+
+<div class="marq rv" style="margin-top:90px"><div class="marq-in">
+  <span>Python</span><span>FastAPI</span><span>SQLAlchemy</span><span>PostgreSQL</span><span>React</span><span>TypeScript</span><span>Tailwind</span><span>WebSocket</span><span>aiogram 3</span><span>JWT</span><span>Docker</span><span>GitHub Actions</span><span>pytest</span><span>RAG / LLM</span>
+  <span>Python</span><span>FastAPI</span><span>SQLAlchemy</span><span>PostgreSQL</span><span>React</span><span>TypeScript</span><span>Tailwind</span><span>WebSocket</span><span>aiogram 3</span><span>JWT</span><span>Docker</span><span>GitHub Actions</span><span>pytest</span><span>RAG / LLM</span>
+</div></div>
+
+<section id="about"><div class="wrap">
+  <div class="sec-head rv"><h2>Что я делаю лучше всего</h2></div>
+  <div class="two">
+    <div class="rv">
+      <p>Полный цикл — от схемы базы до работающего сервиса в проде. Бэкенд берут FastAPI + SQLAlchemy 2, интерфейсы — React/TypeScript или легковесные Jinja2+Alpine, боты — aiogram 3 в связке с основным приложением.</p>
+      <p>Привычка сеньера — ревьюить себя же: тесты, CI на каждый пуш, оценка качества там, где в этом есть смысл (golden-данные, метрики, регрессия). AI закрывает рутину и кухню — архитектурные решения, код и результат были, остались и будут на мне.</p>
+      <p>В последнем репо оценивал степень AI-вклада в дашборд качества: golden-набор, LLM-as-judge, общие ответы против оригинала, A/B сценарий, регрессия после обновления.</p>
+    </div>
+    <div class="ai-card rv">
+      <h4>Как использую AI в разработке</h4>
+      <p><b>1. Ускоритель рутинного кода.</b> Схемы API, миграции, заготовки тестов — AI пишет черновик, я проверяю и правлю.</p>
+      <p><b>2. Ревьюер.</b> Ищу дыры в логике, edge-cases, слабые места в обработке ошибок.</p>
+      <p><b>3. Документация.</b> README, changelog, комментарии к сложным местам.</p>
+      <p><b>4. Ассистент по данным.</b> Внутри проектов — RAG-бот, цитирующий источники, не фантазирующий.</p>
+      <p style="color:#3ddad7;font-weight:600;margin-bottom:0">Отвечаю за архитектуру, код, тесты, деплой и результат.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="contact rv">
+    <h2>Смотрим вживую</h2>
+    <p>Любой проект запускается у вас локально за 2 минуты по README, или покажу демо на созвоне. Открыт к тестовым заданиям.</p>
+    <div class="btns">
+      <a class="btn hero" href="https://github.com/nwl01234" target="_blank">GitHub — все проекты ↗</a>
+      <a class="btn ghost" href="#projects">↑ К проектам</a>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">Николай · разработчик с AI-усилением · <a href="https://github.com/nwl01234" style="color:#9bb5ff">github.com/nwl01234</a></div></footer>
+
+<script>
+// scroll reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// counters
+const so=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;so.disconnect();
+  document.querySelectorAll('#stats b').forEach(b=>{
+    const n=+b.dataset.n,t0=performance.now();
+    const tick=t=>{const p=Math.min((t-t0)/1400,1);b.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(tick)};
+    requestAnimationFrame(tick);
+  });
+}),{threshold:.4});
+so.observe(document.getElementById('stats'));
+
+// tilt
+document.querySelectorAll('[data-tilt]').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`perspective(1000px) rotateX(${(-y*2).toFixed(2)}deg) rotateY(${(x*2).toFixed(2)}deg)`;
+  });
+  card.addEventListener('mouseleave',()=>card.style.transform='');
+});
+</script>
+</body>
+</html>
