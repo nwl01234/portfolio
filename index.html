@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Николай — разработчик с AI-усилением | Автоматизация бизнес-процессов</title>
+<title>Python Backend · Автоматизация · CRM · Telegram · Дашборды</title>
 <meta name="description" content="CRM, Telegram-боты, дашборды, внутренние сервисы. Полный цикл: архитектура → код → тесты → деплой. Каждый проект запускается за 2 минуты.">
 <style>
 :root{
@@ -158,6 +158,14 @@ section{padding:96px 0}
 .hh-chip{margin-top:22px;font-size:13px;color:#67708c;position:relative}
 .hh-chip a{color:#9bb5ff}
 
+
+/* terminal */
+.term{width:100%;height:100%;background:#04050a;display:flex;flex-direction:column}
+.term-bar{height:32px;background:rgba(255,255,255,.05);display:flex;align-items:center;gap:7px;padding:0 12px;border-bottom:1px solid var(--line)}
+.tl{margin-left:auto;font-size:11px;color:#67708c}
+.term pre{flex:1;color:#9fe8dd;font-family:Consolas,monospace;font-size:13px;line-height:1.75;padding:18px 22px;overflow:hidden}
+.term pre b{color:#fff}.term pre .src{color:#3ddad7}
+
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13px;text-align:center}
 
 /* reveal */
@@ -195,9 +203,9 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 <section id="hero"><div class="wrap">
   <div class="hero-flex">
     <div>
-      <div class="bdg rv"><span class="dot"></span>Открыт к предложениям · вайб-кодер / fullstack</div>
-      <h1 class="tt rv d1">Разработчик с <span class="gt">AI-усилением</span></h1>
-      <p class="sub rv d2">Автоматизация бизнес-процессов, внутренние инструменты, CRM, Telegram-боты, дашборды. Архитектуру, код, тесты и деплой держу на себе — AI только ускоряет рутину.</p>
+      <div class="bdg rv"><span class="dot"></span>Открыт к предложениям · fullstack</div>
+      <h1 class="tt rv d1"><span class="gt">Fullstack-разработчик</span></h1>
+      <p class="sub rv d2">Автоматизация · CRM · Telegram · Real-time дашборды.</p>
       <div class="hstats rv d2">
         <div class="hstat"><b>4 рабочих продукта</b></div>
         <div class="hstat"><b>Демо за 2 минуты</b> — каждый запуск из README</div>
@@ -210,12 +218,12 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
     </div>
     <div class="rv d2">
       <div class="brw">
-        <div class="brw-bar"><span class="c3 r"></span><span class="c3 y"></span><span class="c3 g"></span><span class="brw-url" id="url">orbit-crm · дашборд</span></div>
+        <div class="brw-bar"><span class="c3 r"></span><span class="c3 y"></span><span class="c3 g"></span><span class="brw-url" id="url">business-flow · дашборд</span></div>
         <div class="brw-view" id="hs">
-          <div class="slide on"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/1.png" alt="orbit-crm дашборд"></div>
-          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/2.png" alt="kanban сделки"></div>
-          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/skrin/1.png" alt="business-flow дашборд"></div>
-          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/autoshop/main/skrin/1.png" alt="autoshop витрина"></div>
+          <div class="slide on"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/skrin/1.png" alt="business-flow дашборд"></div>
+          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/skrin/2.png" alt="business-flow операции"></div>
+          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/1.png" alt="orbit-crm дашборд"></div>
+          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/5.png" alt="orbit-crm аналитика"></div>
         </div>
         <div class="dots" id="hd"></div>
         <div class="brw-cap">Живая витрина — реальные экраны работающих приложений</div>
@@ -226,7 +234,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
     <div class="stat"><b data-n="8">0</b><span>публичных репозиториев с проектами</span></div>
     <div class="stat"><b data-n="4">0</b><span>готовых продукта: запущены, открыты в коде</span></div>
     <div class="stat"><b data-n="2">0</b><span>минуты — ресурс для запуска любого проекта</span></div>
-    <div class="stat"><b data-n="100">0</b><span>% автотестов зелёные после каждого пуша</span></div>
+    <div class="stat"><b>CI</b><span>зелёный workflow: зависимости соберутся, приложение импортируется, тесты пройдут</span></div>
   </div>
 </div></section>
 
@@ -279,7 +287,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
         <li>Роли admin / manager / viewer, JWT-вход</li>
         <li>AI-ассистент отвечает по данным CRM — со ссылкой на источник</li>
       </ul>
-      <span class="res">🚀 Демо: clone → uvicorn app.main:app → admin/admin123, данные засеиваются сами</span>
+      <span class="res">🚀 Запуск: clone → uvicorn app.main:app → admin/admin123 (данные засеиваются сами)</span>
     </div>
     <div class="show-view">
       <div class="fr on"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/1.png" loading="lazy"></div>
@@ -300,7 +308,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
         <li>Заказ уходит deep-link'ом менеджеру в бота — сценарий покупки не обрывается</li>
         <li>Тёмная/светлая тема подхватывается из Telegram</li>
       </ul>
-      <span class="res">🚀 Демо: каталог, корзина и deep-link в бота — код и скрины открыты</span>
+      <span class="res">🚀 Запуск: clone → python -m http.server 8080 → витрина + deep-link в @NexusDvBot</span>
     </div>
     <div class="show-view">
       <div class="fr on"><img src="https://raw.githubusercontent.com/nwl01234/autoshop/main/skrin/1.png" loading="lazy"></div>
@@ -319,11 +327,24 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
         <li>Блок выдумывания: нет в базе — честно говорит «нет данных»</li>
         <li>Работает офлайн, без секретов — запускается сразу</li>
       </ul>
-      <span class="res">🚀 Демо: python demo.py — 3 вопроса-ответа; /docs — открытый API</span>
+      <span class="res">🚀 Запуск: clone → python demo.py (офлайн); uvicorn app:app → /docs — открытый API</span>
     </div>
     <div class="show-view">
-      <div class="fr on"><img src="https://raw.githubusercontent.com/nwl01234/rag-docs-bot/main/skrin/api.png" loading="lazy"></div>
-      <div class="tags2"><span class="live"></span>Открытая документация API</div>
+      <div class="term">
+        <div class="term-bar"><span class="c3 r"></span><span class="c3 y"></span><span class="c3 g"></span><span class="tl">demo.py · офлайн, без ключей</span></div>
+        <pre>$ python demo.py
+индекс: 6 чанков
+
+<b>Q:</b> сколько дней отпуск
+<b>A:</b> Основной оплачиваемый отпуск — 28 календарных дней в году.
+   Заявление подаётся в кадровую систему минимум за две недели...
+<span class="src">   источники: hr_policy</span>
+<b>Q:</b> как получить монитор
+<b>A:</b> В базе нет ответа. Уточните вопрос или создайте заявку.
+<span class="src">   источники: —</span>
+$ _</pre>
+      </div>
+      <div class="tags2"><span class="live"></span>Честный ответ: «нет данных» вместо выдумки</div>
     </div>
   </div></div>
 </div></section>
@@ -331,20 +352,16 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 <section id="ai"><div class="wrap">
   <div class="sh rv"><h2>Как я использую AI в разработке</h2></div>
   <div class="ai-grid">
-    <div class="ai rv"><div class="n">01</div><h4>Ускорение рутинного кода</h4><p>Черновики API-схем, миграций, заготовок тестов и документации — AI пишет основу, я проверяю, правлю и отвечаю за итог.</p></div>
-    <div class="ai rv d1"><div class="n">02</div><h4>Ревью и поиск краёв</h4><p>AI помогает находить edge-cases и дыры в обработке ошибок — до того, как их найдёт заказчик.</p></div>
-    <div class="ai rv d2"><div class="n">03</div><h4>Ответственность на мне</h4><p>Архитектура, код, тесты, метрики качества и деплой — всегда проверены и подписаны мной, а не «сгенерированы».</p></div>
-  </div>
-  <div class="extra rv" style="margin-top:34px">
-    <a class="xp" href="https://github.com/nwl01234/llm-finetune-studio" target="_blank">⚙ Дополнительно: <b>llm-finetune-studio</b> — fine-tuning моделей и дашборд метрик</a>
-    <a class="xp" href="https://github.com/nwl01234/cad-copilot" target="_blank">⚙ Дополнительно: <b>cad-copilot</b> — AI-ассистент черчения из запроса</a>
+    <div class="ai rv"><div class="n">01</div><h4>Ускорение</h4><p>Схемы API, миграции, тесты и документация — черновик быстрее, проверка за мной.</p></div>
+    <div class="ai rv d1"><div class="n">02</div><h4>Ревью</h4><p>Ищу edge-cases и дыры в обработке ошибок до того, как их найдёт продакшен.</p></div>
+    <div class="ai rv d2"><div class="n">03</div><h4>Ответственность</h4><p>Архитектура, код, тесты и деплой — проверены и подписаны мной.</p></div>
   </div>
 </div></section>
 
 <section id="contact"><div class="wrap">
   <div class="cta rv">
-    <h2>Готов обсудить ваш проект</h2>
-    <p>Любой из проектов запускается у вас локально за 2 минуты по README — проверьте руками. Отвечаю быстро, открыт к тестовому заданию.</p>
+    <h2>Открыт к предложениям</h2>
+    <p>Собираю рабочие системы: заявки, остатки, роли, аудит, уведомления, real-time дашборды. Покажу демо вживую на созвоне, готов к тестовому заданию.</p>
     <div class="btns">
       <a class="btn h" href="https://github.com/nwl01234" target="_blank">GitHub: nwl01234 ↗</a>
       <a class="btn g" href="#projects">↑ Ещё раз к проектам</a>
@@ -369,7 +386,7 @@ new IntersectionObserver((es,o)=>{if(!es[0].isIntersecting)return;o.disconnect()
 document.querySelectorAll('#stats b').forEach(b=>{const n=+b.dataset.n,t0=performance.now();
 const tick=t=>{const p=Math.min((t-t0)/1400,1);b.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)})},{threshold:.4}).observe(document.getElementById('stats'));
 // hero slideshow
-const slides=[...document.querySelectorAll('#hs .slide')],caps=['orbit-crm · дашборд','orbit-crm · kanban сделок','business-flow · дашборд','autoshop · витрина'],dotsBox=document.getElementById('hd');
+const slides=[...document.querySelectorAll('#hs .slide')],caps=['business-flow · дашборд','business-flow · журнал операций','orbit-crm · дашборд','orbit-crm · аналитика'],dotsBox=document.getElementById('hd');
 slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dts'+(i?'':' on');d.onclick=()=>go(i);dotsBox.append(d)});
 let cur=0;const go=i=>{slides[cur].classList.remove('on');dotsBox.children[cur].classList.remove('on');cur=i%slides.length;slides[cur].classList.add('on');dotsBox.children[cur].classList.add('on');document.getElementById('url').textContent=caps[cur]};
 setInterval(()=>go(cur+1),4200);
