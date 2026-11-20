@@ -246,12 +246,14 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 </div></div>
 
 <section id="pains"><div class="wrap">
-  <div class="sh rv"><h2>Какие задачи я закрываю</h2><p>Формулировки — на языке бизнеса, решения — рабочим кодом, который вы можете открыть прямо сейчас.</p></div>
+  <div class="sh rv"><h2>Какие задачи я закрываю</h2><p>Полный цикл фичи, внутренние кабинеты и учёт, API с ролями, целостность данных, realtime, TypeScript/Node.</p></div>
   <div class="pains">
-    <div class="pain rv"><div class="pb">✕ Заявки теряются в переписках</div><h3>Приём заявок без человека</h3><p>Telegram-бот принимает заказ, сам сверяет остатки, пишет в журнал операций и уведомляет менеджера.</p><div class="pr"><a href="https://github.com/nwl01234/business-flow-automator">✓ business-flow-automator</a></div></div>
-    <div class="pain rv d1"><div class="pb">✕ «Кто поменял в CRM?» — никто не знает</div><h3>Прозрачность вместо хаоса</h3><p>Роли admin/manager, аудит каждого действия, канбан сделок — видно, кто, что и когда менял.</p><div class="pr"><a href="https://github.com/nwl01234/orbit-crm">✓ orbit-crm</a></div></div>
-    <div class="pain rv d2"><div class="pb">✕ Сотрудники ищут документы часами</div><h3>Ответы по базе за секунды</h3><p>Бот отвечает только по документам компании, каждый ответ — со ссылкой на источник, без выдумываний.</p><div class="pr"><a href="https://github.com/nwl01234/rag-docs-bot">✓ rag-docs-bot</a></div></div>
-    <div class="pain rv d3"><div class="pb">✕ Отчёты собираются вручную</div><h3>Real-time дашборд</h3><p>Живая панель операций и аналитика: руководитель видит состояние сразу после логина.</p><div class="pr">✓ во всех проектах</div></div>
+    <div class="pain rv"><div class="pb">✕ Фича вязнет между фронтом и бэком</div><h3>Полный цикл фичи</h3><p>От идеи до production-ready: API, UI, права, данные, проверка, запуск.</p><div class="pr"><a href="https://github.com/nwl01234/business-flow-automator">✓ business-flow</a> · <a href="https://github.com/nwl01234/pulse-crm">pulse-crm</a></div></div>
+    <div class="pain rv d1"><div class="pb">✕ Заявки и остатки живут в таблицах</div><h3>Внутренние кабинеты и учёт</h3><p>Заявки, остатки/склад, статусы, роли admin/manager, журнал действий.</p><div class="pr"><a href="https://github.com/nwl01234/business-flow-automator">✓ business-flow</a></div></div>
+    <div class="pain rv d2"><div class="pb">✕ Права проверяются только в UI</div><h3>REST API + доступ</h3><p>JWT, RBAC, object-level проверки на backend, понятные ошибки 401/403/409.</p><div class="pr"><a href="https://github.com/nwl01234/business-flow-automator">✓ business-flow</a> · <a href="https://github.com/nwl01234/business-flow-automator/tree/main/node-service">node-service</a></div></div>
+    <div class="pain rv d3"><div class="pb">✕ Двойное списание и потерянные статусы</div><h3>Целостность данных</h3><p>Списание остатка и смена статуса в одной транзакции, идемпотентный повтор confirm, audit log.</p><div class="pr"><a href="https://github.com/nwl01234/business-flow-automator">✓ business-flow</a></div></div>
+    <div class="pain rv d3"><div class="pb">✕ Дашборд устаревает после действия</div><h3>Realtime UI</h3><p>Дашборд обновляется по WebSocket после commit, без ручного refresh.</p><div class="pr"><a href="https://github.com/nwl01234/business-flow-automator">✓ business-flow</a></div></div>
+    <div class="pain rv d3"><div class="pb">✕ Node/TS — только на словах</div><h3>Node/TypeScript перенос</h3><p>Тот же core flow на Hono + TS: login, orders, confirm, RBAC, audit.</p><div class="pr"><a href="https://github.com/nwl01234/business-flow-automator/tree/main/node-service">✓ node-service</a></div></div>
   </div>
 </div></section>
 
