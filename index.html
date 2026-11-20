@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Python Backend · Автоматизация · CRM · Telegram · Дашборды</title>
-<meta name="description" content="CRM, Telegram-боты, дашборды, внутренние сервисы. Полный цикл: архитектура → код → тесты → деплой. Демо запускается одной командой.">
+<title>Fullstack Developer · React/TypeScript · API · PostgreSQL</title>
+<meta name="description" content="Fullstack-разработчик: React/TypeScript, API, PostgreSQL, Docker, JWT, WebSocket. Автоматизация, CRM и realtime-дашборды — полный цикл фич.">
 <style>
 :root{
  --bg:#05060d;--card:rgba(255,255,255,.035);--line:rgba(255,255,255,.08);
@@ -145,7 +145,7 @@ section{padding:96px 0}
 
 /* marquee */
 .marq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.marq-in{display:flex;gap:54px;width:max-content;animation:sc 30s linear infinite}
+.marq-in{display:flex;gap:32px;flex-wrap:wrap;justify-content:center;width:auto}
 .marq-in span{font-size:19px;font-weight:700;color:#565e78;white-space:nowrap}
 @keyframes sc{to{transform:translateX(-50%)}}
 
@@ -204,10 +204,13 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   <div class="hero-flex">
     <div>
       <div class="bdg rv"><span class="dot"></span>Открыт к предложениям · fullstack</div>
-      <h1 class="tt rv d1"><span class="gt">Fullstack-разработчик</span></h1>
-      <p class="sub rv d2">Автоматизация · CRM · Telegram · Real-time дашборды.</p>
+      <h1 class="tt rv d1"><span class="gt">Fullstack</span> · React/TypeScript</h1>
+      <p class="sub rv d2">API · PostgreSQL · Docker · автоматизация · CRM · realtime-дашборды · полный цикл фич.</p>
+      <div class="rv d2" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
+        <span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">JWT</span><span class="tag">WebSocket</span><span class="tag">FastAPI</span><span class="tag">Hono</span>
+      </div>
       <div class="hstats rv d2">
-        <div class="hstat"><b>4 рабочих продукта</b></div>
+        <div class="hstat"><b>5 рабочих продуктов</b></div>
         <div class="hstat"><b>Демо одной командой</b> — docker compose up</div>
         <div class="hstat"><b>CI: pytest + Node</b> — 15 тестов, на каждый пуш</div>
       </div>
@@ -222,8 +225,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
         <div class="brw-view" id="hs">
           <div class="slide on"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/.assets/screens/02.png" alt="business-flow дашборд"></div>
           <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/.assets/screens/05.png" alt="business-flow операции"></div>
-          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/1.png" alt="orbit-crm дашборд"></div>
-          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/orbit-crm/main/skrin/5.png" alt="orbit-crm аналитика"></div>
+          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/pulse-crm/main/.assets/screens/01.png" alt="pulse-crm дашборд"></div>
+          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/pulse-crm/main/.assets/screens/03.png" alt="pulse-crm сделки"></div>
         </div>
         <div class="dots" id="hd"></div>
         <div class="brw-cap">Живая витрина — реальные экраны работающих приложений</div>
@@ -232,14 +235,13 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   </div>
   <div class="stats rv" id="stats">
     <div class="stat"><b data-n="8">8</b><span>публичных репозиториев с проектами</span></div>
-    <div class="stat"><b data-n="4">4</b><span>готовых продукта: запущены, открыты в коде</span></div>
+    <div class="stat"><b data-n="5">5</b><span>готовых продуктов: запущены, открыты в коде</span></div>
     <div class="stat"><b data-n="1">1</b><span>команда до демо: docker compose up --build</span></div>
     <div class="stat"><b>CI</b><span>12 pytest + 3 Node-теста, сборка фронтенда — на каждый пуш</span></div>
   </div>
 </div></section>
 
 <div class="marq"><div class="marq-in">
-  <span>Python</span><span>FastAPI</span><span>SQLAlchemy 2</span><span>PostgreSQL</span><span>React</span><span>TypeScript</span><span>Tailwind</span><span>WebSocket</span><span>aiogram 3</span><span>JWT</span><span>Docker</span><span>GitHub Actions</span><span>pytest</span><span>RAG</span>
   <span>Python</span><span>FastAPI</span><span>SQLAlchemy 2</span><span>PostgreSQL</span><span>React</span><span>TypeScript</span><span>Tailwind</span><span>WebSocket</span><span>aiogram 3</span><span>JWT</span><span>Docker</span><span>GitHub Actions</span><span>pytest</span><span>RAG</span>
 </div></div>
 
@@ -253,18 +255,29 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   </div>
 </div></section>
 
+<section id="node"><div class="wrap">
+  <div class="rv" style="margin:28px 0 8px;padding:26px 28px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(120deg,rgba(108,140,255,.14),rgba(160,108,255,.06));display:flex;gap:24px;justify-content:space-between;align-items:center;flex-wrap:wrap">
+    <div>
+      <div class="tags"><span class="tag">TypeScript</span><span class="tag">Hono</span><span class="tag">Zod</span><span class="tag">JWT</span><span class="tag">node:test</span></div>
+      <h2 style="margin:12px 0 6px;font-size:26px">Node/Hono mirror core flow</h2>
+      <p style="margin:0;color:var(--muted);max-width:760px">Тот же confirm / stock write-off / RBAC / audit на TypeScript + Hono. Не второй backend — доказательство переноса правил на Node.</p>
+    </div>
+    <a class="btn h" href="https://github.com/nwl01234/business-flow-automator/tree/main/node-service" target="_blank">Открыть node-service ↗</a>
+  </div>
+</div></section>
+
 <section id="projects"><div class="wrap">
-  <div class="sh rv"><h2>Витрина <span class="gt">— 4 продукта</span></h2><p>Наведите курсор на скрин — файл живой. Под каждым — одинаковая логика: реальные интерфейсы, демо-запуск из README, код открыт.</p></div>
+  <div class="sh rv"><h2>Витрина <span class="gt">— 5 продуктов</span></h2><p>Наведите курсор на скрин — файл живой. Под каждым — одинаковая логика: реальные интерфейсы, демо-запуск из README, код открыт.</p></div>
 
   <div class="show rv" id="bf"><div class="show-in">
     <div class="show-txt">
       <div class="tags"><span class="tag">FastAPI</span><span class="tag">React · TS</span><span class="tag">WebSocket</span><span class="tag">JWT · роли</span><span class="tag">Docker</span></div>
       <h3><a href="https://github.com/nwl01234/business-flow-automator" target="_blank">business-flow-automator ↗</a></h3>
       <ul>
-        <li>Telegram-приём заказов: клиент написал — заявка уже в системе</li>
-        <li>Автопроверка остатков: нет товара — заказ не принят, без ручных споров</li>
-        <li>Журнал всех операций + real-time дашборд их анализа</li>
-        <li>Роли admin / manager / bot — у бота свои права, у людей свои</li>
+        <li>Заявка → подтверждение одной транзакцией: списание остатка + audit, повторный confirm не списывает дважды</li>
+        <li>Роли admin / manager / bot, object-level доступ на backend; JWT</li>
+        <li>Real-time dashboard: WebSocket-события после commit + fallback-поллинг</li>
+        <li>Docker compose up, seed-данные, 12 pytest + Node/Hono mirror</li>
       </ul>
       <span class="res">🚀 Демо: git clone → docker compose up → admin/admin123</span>
     </div>
@@ -274,6 +287,26 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
       <div class="fr"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/.assets/screens/04.png" loading="lazy"></div>
       <div class="mini" data-frames="bf"><img class="on" src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/.assets/screens/02.png"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/.assets/screens/03.png"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/.assets/screens/04.png"></div>
       <div class="tags2"><span class="live"></span>Живой дашборд операций</div>
+    </div>
+  </div></div>
+
+  <div class="show rv" id="pc"><div class="show-in">
+    <div class="show-txt">
+      <div class="tags"><span class="tag">React 18</span><span class="tag">TypeScript</span><span class="tag">FastAPI</span><span class="tag">SQLAlchemy 2</span><span class="tag">Alembic</span><span class="tag">JWT</span></div>
+      <h3><a href="https://github.com/nwl01234/pulse-crm" target="_blank">pulse-crm ↗</a></h3>
+      <ul>
+        <li>Fullstack CRM: React/TS SPA + async FastAPI + SQLAlchemy 2.0</li>
+        <li>Сделки, клиенты и воронка; роли и JWT проверяются на backend</li>
+        <li>Миграции Alembic, Telegram-интеграция, typed API-слой</li>
+      </ul>
+      <span class="res">🚀 Демо: README → backend + npm run dev</span>
+    </div>
+    <div class="show-view">
+      <div class="fr on"><img src="https://raw.githubusercontent.com/nwl01234/pulse-crm/main/.assets/screens/01.png" loading="lazy"></div>
+      <div class="fr"><img src="https://raw.githubusercontent.com/nwl01234/pulse-crm/main/.assets/screens/03.png" loading="lazy"></div>
+      <div class="fr"><img src="https://raw.githubusercontent.com/nwl01234/pulse-crm/main/.assets/screens/04.png" loading="lazy"></div>
+      <div class="mini" data-frames="pc"><img class="on" src="https://raw.githubusercontent.com/nwl01234/pulse-crm/main/.assets/screens/01.png"><img src="https://raw.githubusercontent.com/nwl01234/pulse-crm/main/.assets/screens/03.png"><img src="https://raw.githubusercontent.com/nwl01234/pulse-crm/main/.assets/screens/04.png"></div>
+      <div class="tags2"><span class="live"></span>React/TS CRM · сделки и воронка</div>
     </div>
   </div></div>
 
@@ -391,7 +424,7 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
  const tick=t=>{const p=Math.min((t-t0)/900,1);b.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)})},{threshold:.4}).observe(statEl);
 }
 // hero slideshow
-const slides=[...document.querySelectorAll('#hs .slide')],caps=['business-flow · дашборд','business-flow · журнал операций','orbit-crm · дашборд','orbit-crm · аналитика'],dotsBox=document.getElementById('hd');
+const slides=[...document.querySelectorAll('#hs .slide')],caps=['business-flow · дашборд','business-flow · журнал операций','pulse-crm · React/TS','pulse-crm · сделки'],dotsBox=document.getElementById('hd');
 slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dts'+(i?'':' on');d.onclick=()=>go(i);dotsBox.append(d)});
 let cur=0;const go=i=>{slides[cur].classList.remove('on');dotsBox.children[cur].classList.remove('on');cur=i%slides.length;slides[cur].classList.add('on');dotsBox.children[cur].classList.add('on');document.getElementById('url').textContent=caps[cur]};
 setInterval(()=>go(cur+1),4200);
