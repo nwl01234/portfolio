@@ -276,16 +276,16 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 
   <div class="show rv" id="co"><div class="show-in">
     <div class="show-txt">
-      <div class="tags"><span class="tag">TypeScript</span><span class="tag">React 19</span><span class="tag">Hono</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">NATS</span><span class="tag">WebSocket</span><span class="tag">Tesseract OCR</span></div>
+      <div class="tags"><span class="tag">TypeScript</span><span class="tag">React 19</span><span class="tag">Hono</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">NATS JetStream</span><span class="tag">WebSocket</span><span class="tag">Tesseract OCR</span><span class="tag">MinIO S3</span></div>
       <h3><a href="https://github.com/nwl01234/cardops" target="_blank">CardOps — card lifecycle platform ↗</a></h3>
       <ul>
-        <li>4 сервиса: core API, notifications, OCR и outbox-worker; PostgreSQL, Redis и NATS</li>
+        <li>5 сервисов: core API, notifications, OCR, documents и outbox-worker; PostgreSQL, Redis, NATS и S3</li>
         <li>Refresh rotation + reuse detection, отзыв сессий, Redis rate limit, RBAC и object scope</li>
-        <li>Transactional outbox → NATS → Redis Pub/Sub → WebSocket; клиент дедуплицирует события</li>
-        <li>Реальный OCR: фото → SKU, идемпотентные переходы и append-only audit</li>
+        <li>JetStream durable consumer, ack после fanout, DLQ и replay из system-экрана</li>
+        <li>Реальный OCR: фото → SKU, PDF-акт по карте с записью в MinIO/S3</li>
         <li>22 API + 5 web + 5 notifications + 4 OCR теста; запуск без Docker</li>
       </ul>
-      <span class="res">🚀 Демо: start-demo.bat → admin/admin123 · 8 карт и OCR</span>
+      <span class="res">🚀 Демо: start-demo.bat → admin/admin123 · карты, OCR и PDF-акт</span>
     </div>
     <div class="show-view">
       <div class="fr on"><img src="https://raw.githubusercontent.com/nwl01234/cardops/main/.assets/screens/01-dashboard.png" loading="lazy" alt="CardOps dashboard"></div>
