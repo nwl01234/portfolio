@@ -210,9 +210,9 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
         <span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">JWT</span><span class="tag">WebSocket</span><span class="tag">FastAPI</span><span class="tag">Hono</span>
       </div>
       <div class="hstats rv d2">
-        <div class="hstat"><b>5 рабочих продуктов</b></div>
-        <div class="hstat"><b>Демо одной командой</b> — docker compose up</div>
-        <div class="hstat"><b>CI: pytest + Node</b> — 15 тестов, на каждый пуш</div>
+        <div class="hstat"><b>6 рабочих продуктов</b></div>
+        <div class="hstat"><b>Демо одной командой</b> — bat или docker compose</div>
+        <div class="hstat"><b>CI: 36 тестов</b> — API, web, notifications, OCR</div>
       </div>
       <div class="rv d3" style="display:flex;gap:14px;flex-wrap:wrap">
         <a class="btn h" href="#projects">Смотреть проекты ↓</a>
@@ -223,7 +223,10 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
       <div class="brw">
         <div class="brw-bar"><span class="c3 r"></span><span class="c3 y"></span><span class="c3 g"></span><span class="brw-url" id="url">business-flow · дашборд</span></div>
         <div class="brw-view" id="hs">
-          <div class="slide on"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/.assets/screens/02.png" alt="business-flow дашборд"></div>
+          <div class="slide on"><img src="https://raw.githubusercontent.com/nwl01234/cardops/main/.assets/screens/01-dashboard.png" alt="CardOps dashboard"></div>
+          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/cardops/main/.assets/screens/02-cards.png" alt="CardOps карты"></div>
+          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/cardops/main/.assets/screens/03-system.png" alt="CardOps system"></div>
+          <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/.assets/screens/02.png" alt="business-flow дашборд"></div>
           <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/business-flow-automator/main/.assets/screens/05.png" alt="business-flow операции"></div>
           <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/pulse-crm/main/.assets/screens/01.png" alt="pulse-crm дашборд"></div>
           <div class="slide"><img src="https://raw.githubusercontent.com/nwl01234/pulse-crm/main/.assets/screens/03.png" alt="pulse-crm сделки"></div>
@@ -234,15 +237,15 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
     </div>
   </div>
   <div class="stats rv" id="stats">
-    <div class="stat"><b data-n="8">8</b><span>публичных репозиториев с проектами</span></div>
-    <div class="stat"><b data-n="5">5</b><span>готовых продуктов: запущены, открыты в коде</span></div>
-    <div class="stat"><b data-n="1">1</b><span>команда до демо: docker compose up --build</span></div>
-    <div class="stat"><b>CI</b><span>12 pytest + 3 Node-теста, сборка фронтенда — на каждый пуш</span></div>
+    <div class="stat"><b data-n="9">9</b><span>публичных репозиториев с проектами</span></div>
+    <div class="stat"><b data-n="6">6</b><span>готовых продуктов: запущены, открыты в коде</span></div>
+    <div class="stat"><b data-n="2">2</b><span>способа демо: bat без Docker / docker compose</span></div>
+    <div class="stat"><b>CI</b><span>22 API + 5 web + 5 notifications + 4 OCR теста</span></div>
   </div>
 </div></section>
 
 <div class="marq"><div class="marq-in">
-  <span>TypeScript</span><span>React</span><span>PostgreSQL</span><span>Docker</span><span>JWT</span><span>WebSocket</span><span>Hono</span><span>FastAPI</span><span>SQLAlchemy 2</span><span>Python</span><span>Tailwind</span><span>aiogram 3</span><span>GitHub Actions</span><span>pytest</span>
+  <span>TypeScript</span><span>React</span><span>PostgreSQL</span><span>Redis</span><span>NATS</span><span>WebSocket</span><span>Hono</span><span>Tesseract OCR</span><span>Outbox</span><span>Docker</span><span>JWT</span><span>FastAPI</span><span>SQLAlchemy 2</span><span>Python</span><span>Tailwind</span><span>GitHub Actions</span>
 </div></div>
 
 <section id="pains"><div class="wrap">
@@ -269,7 +272,29 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 </div></section>
 
 <section id="projects"><div class="wrap">
-  <div class="sh rv"><h2>Витрина <span class="gt">— 5 продуктов</span></h2><p>Наведите курсор на скрин — файл живой. Под каждым — одинаковая логика: реальные интерфейсы, демо-запуск из README, код открыт.</p></div>
+  <div class="sh rv"><h2>Витрина <span class="gt">— 6 продуктов</span></h2><p>Наведите курсор на скрин — файл живой. Под каждым — одинаковая логика: реальные интерфейсы, демо-запуск из README, код открыт.</p></div>
+
+  <div class="show rv" id="co"><div class="show-in">
+    <div class="show-txt">
+      <div class="tags"><span class="tag">TypeScript</span><span class="tag">React 19</span><span class="tag">Hono</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">NATS</span><span class="tag">WebSocket</span><span class="tag">Tesseract OCR</span></div>
+      <h3><a href="https://github.com/nwl01234/cardops" target="_blank">CardOps — card lifecycle platform ↗</a></h3>
+      <ul>
+        <li>4 сервиса: core API, notifications, OCR и outbox-worker; PostgreSQL, Redis и NATS</li>
+        <li>Refresh rotation + reuse detection, отзыв сессий, Redis rate limit, RBAC и object scope</li>
+        <li>Transactional outbox → NATS → Redis Pub/Sub → WebSocket; клиент дедуплицирует события</li>
+        <li>Реальный OCR: фото → SKU, идемпотентные переходы и append-only audit</li>
+        <li>22 API + 5 web + 5 notifications + 4 OCR теста; запуск без Docker</li>
+      </ul>
+      <span class="res">🚀 Демо: start-demo.bat → admin/admin123 · 8 карт и OCR</span>
+    </div>
+    <div class="show-view">
+      <div class="fr on"><img src="https://raw.githubusercontent.com/nwl01234/cardops/main/.assets/screens/01-dashboard.png" loading="lazy" alt="CardOps dashboard"></div>
+      <div class="fr"><img src="https://raw.githubusercontent.com/nwl01234/cardops/main/.assets/screens/02-cards.png" loading="lazy" alt="CardOps карты"></div>
+      <div class="fr"><img src="https://raw.githubusercontent.com/nwl01234/cardops/main/.assets/screens/03-system.png" loading="lazy" alt="CardOps system"></div>
+      <div class="mini" data-frames="co"><img class="on" src="https://raw.githubusercontent.com/nwl01234/cardops/main/.assets/screens/01-dashboard.png"><img src="https://raw.githubusercontent.com/nwl01234/cardops/main/.assets/screens/02-cards.png"><img src="https://raw.githubusercontent.com/nwl01234/cardops/main/.assets/screens/03-system.png"></div>
+      <div class="tags2"><span class="live"></span>Realtime + outbox + OCR</div>
+    </div>
+  </div></div>
 
   <div class="show rv" id="bf"><div class="show-in">
     <div class="show-txt">
@@ -426,7 +451,7 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
  const tick=t=>{const p=Math.min((t-t0)/900,1);b.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)})},{threshold:.4}).observe(statEl);
 }
 // hero slideshow
-const slides=[...document.querySelectorAll('#hs .slide')],caps=['business-flow · дашборд','business-flow · журнал операций','pulse-crm · React/TS','pulse-crm · сделки'],dotsBox=document.getElementById('hd');
+const slides=[...document.querySelectorAll('#hs .slide')],caps=['CardOps · realtime dashboard','CardOps · карты и статусы','CardOps · system / outbox','business-flow · дашборд','business-flow · журнал операций','pulse-crm · React/TS','pulse-crm · сделки'],dotsBox=document.getElementById('hd');
 slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dts'+(i?'':' on');d.onclick=()=>go(i);dotsBox.append(d)});
 let cur=0;const go=i=>{slides[cur].classList.remove('on');dotsBox.children[cur].classList.remove('on');cur=i%slides.length;slides[cur].classList.add('on');dotsBox.children[cur].classList.add('on');document.getElementById('url').textContent=caps[cur]};
 setInterval(()=>go(cur+1),4200);
